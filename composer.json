@@ -1,0 +1,13 @@
+{
+    "name": "gerha/davincitheme_v3",
+    "require": {
+        "a7/autoload": "^2.1",
+        "nesbot/carbon": "^2.53"
+    },
+    "authors": [
+        {
+            "name": "Gerhard Popp",
+            "email": "gerhrad@poppgerhard.at"
+        }
+    ]
+}

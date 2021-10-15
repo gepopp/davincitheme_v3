@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Da Vinci Group .eu Theme Docs</title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <!-- FontAwesome JS -->
+  <script defer src="assets/fontawesome/js/all.js"></script>
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+  <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+
+  <!-- Theme CSS -->
+  <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body class="body-green">
+<div class="page-wrapper">
+  <!-- ******Header****** -->
+  <header id="header" class="header">
+    <div class="container">
+      <div class="branding">
+        <h1 class="logo">
+          <a href="index_unused.html">
+            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+            <span class="text-highlight">Popp</span><span class="text-bold">Gerhard</span>
+          </a>
+        </h1>
+
+      </div><!--//branding-->
+    </div><!--//container-->
+  </header><!--//header-->
+  <div class="doc-wrapper">
+    <div class="container">
+      <div id="doc-header" class="doc-header text-center">
+        <h1 class="doc-title">Da Vinci Group eu Template</h1>
+        <hr>
+      </div><!--//doc-header-->
+      <div class="doc-body row">
+        <div class="doc-content col-md-9 col-12 order-1">
+          <div class="content-inner">
+            <section id="download-section" class="doc-section">
+              <h2 class="section-title">Technische Grundlagen</h2>
+              <div class="section-block">
+                <div id="starter" class="section-block">
+                  <h3 class="block-title">Starter Theme</h3>
+                  <p>Als Grundlage für die Implementierung des Themes dient das <a href="http://labs.tonik.pl/theme/">Gin
+                    Tonik Starter</a> Theme von tonik LABS.</p>
+                  <div class="text-center">
+                    <a class="btn btn-primary" href="https://labs.tonik.pl/theme/docs/">Starter Theme Documentation</a>
+                  </div>
+
+                </div><!--//section-block-->
+                <div id="css" class="section-block">
+                  <h3 class="block-title">CSS Framework</h3>
+                  <p>Als Grundlage für das Theme Stylesheet wurde das Utility basierte Framework,
+                    <a href="https://tailwindcss.com/">tailwindcss</a> verwendet.
+                    CSS und JS wurde mit dem webpack preprocessor compiliert, dabei wurde das Framework mittels des
+                    purgecss Plugins um nicht verwendete Klassen bereinigt, es steht also in der Produktiv-Version nicht
+                    das gesamte Framework zur verfügung.
+                  </p>
+                  <div class="text-center mb-5">
+                    <a class="btn btn-primary" href="https://tailwindcss.com/">tailwindcss Documentation</a>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-12">
+                      <h6>Farberweiterungen</h6>
+                      <p>Wir haben das Framework um die 4 Hauptfarben des Themes erweitert.</p>
+                      <ul class="list">
+                        <li>golden</li>
+                        <li>darkblue</li>
+                        <li>lightblue</li>
+                        <li>turquise</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6 col-12">
+                      <h6>Damit stehen bei der Inhaltsgestaltung folgende Helferklassen zur verfügung:</h6>
+                      <ol class="list">
+                        <li><strong>Text:</strong><code class="language-markup">text-golden, text-darkblue,
+                          text-lightblue, text-turquise</code></li>
+                        <li><strong>Hintergrund:</strong><code class="language-markup">hg-golden, hg-darkblue,
+                          hg-lightblue, hg-turquise</code></li>
+                        <li><strong>Rahmen:</strong><code class="language-markup">border-golden, border-darkblue,
+                          border-lightblue, border-turquise</code></li>
+                      </ol>
+                    </div>
+                  </div><!--//row-->
+                </div><!--//section-block-->
+                <div id="js" class="section-block">
+                  <h3 class="block-title">JS Framework</h3>
+                  <p>Zur Implementierung der Frontend-Interaktivität wurde das <a href="https://vuejs.org/">Vue2.JS
+                    Framework</a> verwendet.
+                    Für Ajax Calls wurde die <a href="https://github.com/axios/axios">axios</a> Bibliothek verwendet.
+                  </p>
+                  <div class="text-center mb-5">
+                    <a class="btn btn-primary" href="https://vuejs.org/v2/guide/">vue.js Documentation</a>
+                    <a class="btn btn-primary" href="https://github.com/axios/axios">axios Documentation</a>
+                  </div>
+
+                  <div class="callout-block callout-danger">
+                    <div class="icon-holder">
+                      <i class="fas fa-exclamation-triangle"></i>
+                    </div><!--//icon-holder-->
+                    <div class="content">
+                      <h4 class="callout-title">Kein JQuery:</h4>
+                      <p>Achtung: Für nicht eingeloggte User wird kein JQuery geladen, dies dient zur Verbersserung der
+                        Ladezeit. Dadurch kann es sein das Plugins nicht wie erwartet funktionieren.</p>
+                    </div><!--//content-->
+                  </div>
+                </div><!--//section-block-->
+                <div id="plugins" class="section-block">
+                  <h3 class="block-title">Erforderliche Plugins</h3>
+                  <p>
+                    Zur Verwaltung der zusätzlichen Metadatenfelder in allen Inhalttypen und Einstellungen verwendet das
+                    Theme, das <a href="https://www.advancedcustomfields.com/">Advanced Custom Fields</a> Plugin in der
+                    Pro-Version.
+                    Dieses Plugin muss vor dem Theme installiert werden. Das Theme wird mit den Feld-Definitionen als
+                    JSON Dateien ausgeliefert. In der ACF Pro version können diese nach der Installation synchronisiert
+                    werden.
+                  </p>
+                  <div class="text-center mb-5">
+                    <a class="btn btn-primary" href="https://www.advancedcustomfields.com/resources/">ACF
+                      Documentation</a>
+                  </div>
+                </div>
+              </div>
+            </section><!--//doc-section-->
+            <section id="theme-settings" class="doc-section">
+              <h2 class="section-title">Theme Einstellungen</h2>
+            </section><!--//doc-section-->
+
+            <section id="grundeinstellungen" class="doc-section">
+              <h2 class="grundeinstelllungen">Theme Grundeinstellungen</h2>
+              <div class="section-block">
+                <img src="/wp-content/themes/da_vinci_group/documentation/assets/images/theme-einstellungen.PNG" class="img-fluid mb-5">
+                <p>
+                  Das Theme verfügt über drei Grundeinstellungen:
+                </p>
+                <ol class="list mb-5">
+                  <li class="mb-5"><strong>Inhlatshintergrund:</strong><br>
+                    <p>Das hier hochgeladene Bild wird als Hintergrund auf allen Seiten in der Sektion zwischen dem
+                      Kopf- und Fussteil, unten eingefügt.</p>
+                    <div class="callout-block callout-warning">
+                      <div class="icon-holder">
+                        <i class="fas fa-bug"></i>
+                      </div><!--//icon-holder-->
+                      <div class="content">
+                        <h4 class="callout-title">Sicherheitswarnung</h4>
+                        <p>Zur besseren Ladezeitenoptimierung haben wir mit dem Theme den Upload von .svg Dateien frei
+                          geschalten. Mit diesen Dateien kann Schadcode in die Seite eingeschläust werden. Bitte nur
+                          vertrauenswürdige Dateien hoch laden.</p>
+                      </div><!--//content-->
+                    </div><!--//callout-block-->
+                  </li>
+                  <li class="mb-5">
+                    <strong>Abstand Inhlat - Fusszeile</strong>
+                    <p>
+                      Diese Einstellung definiert den Abstand des letzten Inhaltes in der Sektion zwischen Kopf- und
+                      Fusszeile, zur Fusszeile und damit wie weit der Inhalt das Hintergrundbild überlappt.
+                    </p>
+                    <img class="img-fluid" src="/wp-content/themes/da_vinci_group/documentation/assets/images/Einstellung_Abstand_unten.png">
+                  </li>
+                  <li class="mb-5">
+                    <strong>Empfänger Kontaktformular</strong>
+                    <p>Die E-Mail Adresse an die, die Daten eines ausgefüllten Kontaktformulars versendet werden.</p>
+                  </li>
+                </ol>
+              </div><!--//section-block-->
+            </section>
+            <section id="theme-header" class="doc-section">
+              <h2>Kopfzeile</h2>
+              <p>
+                Die Kopfzeile des Themes verfügt über fünf Einstellungen und einen vordefinierten Menüplatz.
+              </p>
+              <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/header-settings.png">
+
+              <ol class="list mb-5">
+                <li class="mb-5"><strong>Logo:</strong>
+                  <p>Das Logo das in der Desktop-Version in der Banderole ausgegeben wird. Optimale Auflösung 150x150 px
+                    oder .svg Datei</p>
+                </li>
+                <li class="mb-5"><strong>Logo Mobil:</strong>
+                  <p>Das Logo das in der Mobilen-Version in der Banderole ausgegeben wird. Optimale Auflösung 150x100 px
+                    oder .svg Datei</p>
+                </li>
+                <li class="mb-5"><strong>Hintergrundbild der Kopfzeile</strong>
+                  <p>Das Bild das hinter der Banderole und dem oberen Teil der Seite angezeigt wird, da dieses Bild
+                    bildschirmfüllend gestreckt wird sollte es in einer Mindebreite von 2700px hoch geladen wrden und
+                    dabei eine Dateigröße on 50 Kb nicht überschreiten.</p>
+                </li>
+                <li class="mb-5"><strong>Kopfbutton Link und Text</strong>
+                  <p>Der Link kann sowohl intern wie auch extern gesetzt werden, Bleibt Link oder Text leer, wird kein
+                    Button angezeigt.</p>
+                </li>
+                <li class="mb-5"><strong>Das Hauptmenü</strong>
+                  <div class="row">
+                    <div class="col">
+                      <p>Das Theme verfügt über einen vordefinierten Menüplatz "Hauptmenü".</p>
+                      <img class="img-fluid" src="/wp-content/themes/da_vinci_group/documentation/assets/images/primary-menu.png">
+                    </div>
+                    <div class="col">
+                      <p>Mehr über Menüs in Wordpress</p>
+                      <div class="embed-responsive embed-responsive-4by3">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/kpsxkEpb-Ww" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="callout-block callout-danger">
+                    <div class="icon-holder">
+                      <i class="fas fa-exclamation-triangle"></i>
+                    </div><!--//icon-holder-->
+                    <div class="content">
+                      <h4 class="callout-title">Keine Dorpdowns:</h4>
+                      <p>Achtung: Das Theme unterstützt in der aktuellen Version keine Untermenüpunkte - Dropdowns.</p>
+                    </div><!--//content-->
+                  </div>
+                </li>
+
+              </ol>
+
+            </section>
+
+            <section id="theme-footer" class="doc-section">
+              <h2>Fusszeile</h2>
+              <p>
+                Die Fusszeile des Themes verfügt über eine Einstellung und drei vordefinierte WordPress-Widget Plätze.
+              </p>
+              <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/footer-settings.png">
+              <ol class="list mb-5">
+                <li class="mb-5"><strong>Copyright Text:</strong>
+                  <p>Wird in der Fusszeile unten, nach dem &copy; Symbol und der aktuellen Jahreszahl ausgegeben.</p>
+                </li>
+                <li class="mb-5"><strong>Widget Plätze:</strong>
+                  <p>Die drei Spalten der Fusszeile werden über Wordpress Widgets befüllt.</p>
+                  <h3>So funktionieren diese Widgets:</h3>
+                  <div class="row">
+                    <div class="col">
+                      <div class="embed-responsive embed-responsive-4by3">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/E2JCwElTj9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="callout-block callout-danger">
+                        <div class="icon-holder">
+                          <i class="fas fa-exclamation-triangle"></i>
+                        </div><!--//icon-holder-->
+                        <div class="content">
+                          <h4 class="callout-title">Unterstützte Widgets:</h4>
+                          <p>Achtung: Aktuell sind nur die Ausgabe der Widgets</p>
+                          <ul>
+                            <li>Bild</li>
+                            <li>Text</li>
+                            <li>Navigationsmenü</li>
+                          </ul>
+                          <p>getestet, alle anderen Widgets können zu einer unerwarteten Ausgabe führen.</p>
+                        </div><!--//content-->
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ol>
+            </section>
+            <section id="project-single-setting" class="doc-section">
+              <h2>Projekt Einzelseite</h2>
+              <p>Auf allen Projekt-Einzelseiten wird unter den Daten des Projektes das Kontaktformular mit vor
+                ausgefülltem Betreff, passend zum Projekt angezeigt. Dabei kann in den Einstellungen die Uberschrift und
+                Subtitel frei vergeben werden.</p>
+              <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/projekt-single-setting.png">
+            </section>
+
+            <section id="team-archive-setting" class="doc-section">
+              <h2>Team Archiv Seite</h2>
+              <p>Die übersicht mit allen Team Mitglieder wird automatisch erzeugt, dabei kann der Inhalt in der
+                Kopfzeile in dieser Sektion der Theme Einstellungen gesetzt werden.</p>
+              <img src="/wp-content/themes/da_vinci_group/documentation/assets/images/team-archive-setting.png" class="img-fluid mb-5">
+              <p>Es stehen vier Einstellungen zur Verfügung:</p>
+              <ol class="list">
+                <li>
+                  <strong>Titel:</strong>
+                  <p>Wird zusammen mit dem Subtitel auf der linken Seite angezeigt</p>
+                </li>
+                <li>
+                  <strong>Subititel</strong>
+                </li>
+                <li>
+                  <strong>Introtext:</strong>
+                  <p>Oberhalb des Archiv-Bildes</p>
+                </li>
+                <li>
+                  <strong>Titelbild</strong>
+                </li>
+              </ol>
+            </section>
+            <section id="404" class="doc-section">
+              <h2>404 Seite</h2>
+              <p>
+                Das Theme verfügt über ein 404 ( Seite nicht gefunden ) Layout.
+                Die Inhlate dieser Fehlerseiten können in den Einstellungen gesetzt werdenn.
+              </p>
+              <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/404settings.png">
+              <img class="img-fluid" src="/wp-content/themes/da_vinci_group/documentation/assets/images/404page.png">
+            </section>
+            <section id="content-types" class="doc-section">
+              <h2 class="section-title">Inhlatstypen</h2>
+              <div class="section-block">
+                <p>Das Template verfügt, neben den WordPress Standard Inhlatstypen über drei Erweiterungen.
+                </p>
+                <section id="projects" class="doc-section">
+                  <h2>Immobilien Projekte</h2>
+                  <p>
+                    Dient zur Ausgabe einzelner Projekte sowie zur generierung von Übersichtssteiten mit dem
+                    <a href="#project-archive">Projekt
+                      Archiv Seiten Template</a>
+                  </p>
+                  <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/project-single-template.png">
+                  <p>Die Tabs auf einer Projekt-Single Seite sind equivakent zu den Tabs im Backend des Projektes. Dabei
+                    werden die Tabs auf der Seite immer nur dann ausgegeben wenn im Backend ein Inhalt eingepflegt
+                    wurde.</p>
+                  <h5>Die Tabs</h5>
+                  <ol class="list">
+                    <li>
+                      <strong>Bildgalerie:</strong>
+                      <div class="row">
+                        <div class="col">
+                          <img src="/wp-content/themes/da_vinci_group/documentation/assets/images/project-galery.PNG" class="img-fluid mb-5">
+                        </div>
+                        <div class="col">
+                          <p>Der Tab Bilder gibt im Frontend die Bilder als Slider in der selben Reihenfolge wie im
+                            Backend
+                            angelegt aus. Ist das Feld Bilder im Backend leer wir das Hauptbild als einzeln
+                            ausgegeben.</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <strong>Appartemnts:</strong>
+                      <p>Ist aktuell ein reines Text Feld mit dem Beschreibungen aus einem WYSIWIG-Editor ausgegeben
+                        werden können.</p>
+                    </li>
+                    <li>
+                      <strong>Gebäude:</strong>
+                      <p>Ist aktuell ein reines Text Feld mit dem Beschreibungen aus einem WYSIWIG-Editor ausgegeben
+                        werden können.</p>
+                      <p>In allen WYSIWIG-Editoren können auch Tabellen als HTML-Code eingepflegt werden, dabei stehen
+                        alle aus dem Framework abgeleiteten CSS Klassen zur Verfügung. Ein Beispiel:</p>
+                      <img src="/wp-content/themes/da_vinci_group/documentation/assets/images/table-sample.PNG" class="img-fluid mb-5">
+                      <h5>Tabellen Code</h5>
+                      <p>Sample Code für eine Tabelle</p>
+                      <pre>
+                        <code class="language-markup">
+&lt;table class=&quot;table-auto w-full b-golden&quot;&gt;
+  &lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;border border-golden p-3&quot;&gt; &lt;/th&gt;
+    &lt;th class=&quot;border border-golden p-3&quot;&gt; Einheiten #&lt;/th&gt;
+    &lt;th class=&quot;border border-golden p-3&quot;&gt; WFL m²&lt;/th&gt;
+    &lt;th class=&quot;border border-golden p-3&quot;&gt; Loggien m²&lt;/th&gt;
+    &lt;th class=&quot;border border-golden p-3&quot;&gt; Balkone m²&lt;/th&gt;
+    &lt;th class=&quot;border border-golden p-3&quot;&gt; Terrassen m²&lt;/th&gt;
+    &lt;th class=&quot;border border-golden p-3&quot;&gt; Gärten m²&lt;/th&gt;
+    &lt;th class=&quot;border border-golden p-3&quot;&gt; PKW Garage #&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; BT Forsthausgasse&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; 77&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; 3.362,17&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; 47,87&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; 326,24&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; 206,53&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; 211,25&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; BT Hopsagasse&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; 72&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; 3.056,24&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; &lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; 338,83&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; 199,98&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; 244,20&lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; 75&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; &lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; &lt;strong&gt; 149&lt;/strong&gt; &lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; &lt;strong&gt; 6.418,41&lt;/strong&gt; &lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; &lt;strong&gt; 47,87&lt;/strong&gt; &lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; &lt;strong&gt; 665,07&lt;/strong&gt; &lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; &lt;strong&gt; 406,51&lt;/strong&gt; &lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; &lt;strong&gt; 455,45&lt;/strong&gt; &lt;/td&gt;
+    &lt;td class=&quot;border border-golden p-3&quot;&gt; &lt;strong&gt; 75&lt;/strong&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+                      </code>
+                      </pre>
+                    </li>
+                    <li>
+                      <strong>Lage:</strong>
+                      <p>Gibt eine Karte mit der eingegebenen Adresse sowie einen Overlay-Text aus.</p>
+                    </li>
+                    <li>
+                      <strong>Ausstattung:</strong>
+                      <p>Bei der Ausstattung können bis zu drei Boxen mit einem Icon, Überschrift, Text und einem Link
+                        als Button ausgegeben werden.
+                      </p>
+                      <p>Eine Übersicht aller Icons samt der einzugebenden CSS Klassen finden ist
+                        <a href="/wp-content/themes/da_vinci_group/resources/assets/iconmoon/demo.html">hier zu
+                          finden</a>.</p>
+                    </li>
+                    <li>
+                      <strong>360° Panorama:</strong>
+                      <p>Der Hier eingegebene Link wird als iFrame im Frontend eingebunden.</p>
+                    </li>
+                    <li>
+                      <strong>Downloads:</strong>
+                      <p>Wird hier nur ein Downlaod eingegeben so wird dieser direkt im Tab-Menü als Download-Link hinterlegt.</p>
+                      <p>Bei mehreren Dateien werden diese im Tab Fenster als Liste ausgegeben. Wobei der Bei der Datein eingeprlegte Titel als Dateiname ausgegeben wird.</p>
+                      <img src="/wp-content/themes/da_vinci_group/documentation/assets/images/DateiTitel.jpg" class="img-fluid"/>
+                    </li>
+                    <li>
+                      <strong>Hervorgehobene Metadaten</strong>
+                      <p class="text-danger">Die hier eingebenen Daten werden nicht als Tab ausgegeben.</p>
+                      <div class="row">
+                        <div class="col">
+                          <img src="/wp-content/themes/da_vinci_group/documentation/assets/images/project-meta.PNG" class="img-fluid mb-5">
+                        </div>
+                        <div class="col">
+                          <p>Je nach der Breite des auf einer Archiv Seite getaggedtem Box-Layouts werden ein, zwei oder
+                            alle drei der eingegebenen Metadaten ausgegeben.</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ol>
+                </section>
+                <section id="realestate" class="doc-section">
+                  <h2>Immobilien</h2>
+                  <p>
+                    Einzelene Immobilien werden über die OpenImmoAPI aus Team3 Importiert.
+                  </p>
+                  <p>Immobilien können, mit Projekten über die Felder OpenImmo->GruppenID bei Projekten und TechnischeVerwaltung->Gruppenkennung bei Immobilien, mmiteinander verknüpft werden.</p>
+                  <h5>Immobilien Stati</h5>
+                  <ol class="list">
+                    <li>
+                      <strong>FREI:</strong>
+                      <p>Ist der default Status einer Immobilien</p>
+                    </li>
+                    <li>
+                      <strong>Reserviert:</strong>
+                      <p>Obejekte sind dann reserviert wenn das aktuelle Datum des Seitenaufrufs nicht zwischen den Dati in
+                        Objektverwaltung->Ab Datum und Objektverwaltung->Bis Datum liegt. Wenn eines der Datumsfelder leer ist wird dies
+                      für die Determinierung durch ein Datum, undendlich in der Vergangenheit bzw. Zukunft ersetzt.</p>
+                    </li>
+                    <li>
+                      <strong>Verkauft:</strong>
+                      <p>Ist bei einer Immobilien das Feld Objektverwaltung->Verfügbar ab mit dem Wort "verkauft" befüllt so wird der Status Verkauft ausgegeben,
+                      wobei der Status verkauft den Status reserviert überschreibt.</p>
+                    </li>
+                    <li>
+                      <strong>Lage:</strong>
+                      <p>Gibt eine Karte mit der eingegebenen Adresse sowie einen Overlay-Text aus.</p>
+                    </li>
+                    <li>
+                      <strong>Ausstattung:</strong>
+                      <p>Bei der Ausstattung können bis zu drei Boxen mit einem Icon, Überschrift, Text und einem Link
+                        als Button ausgegeben werden.
+                      </p>
+                      <p>Eine Übersicht aller Icons samt der einzugebenden CSS Klassen finden ist
+                        <a href="/wp-content/themes/da_vinci_group/resources/assets/iconmoon/demo.html">hier zu
+                          finden</a>.</p>
+                    </li>
+                    <li>
+                      <strong>360° Panorama:</strong>
+                      <p>Der Hier eingegebene Link wird als iFrame im Frontend eingebunden.</p>
+                    </li>
+                    <li>
+                      <strong>Downloads:</strong>
+                      <p>Wird hier nur ein Downlaod eingegeben so wird dieser direkt im Tab-Menü als Download-Link hinterlegt.</p>
+                      <p>Bei mehreren Dateien werden diese im Tab Fenster als Liste ausgegeben. Wobei der Bei der Datein eingeprlegte Titel als Dateiname ausgegeben wird.</p>
+                      <img src="/wp-content/themes/da_vinci_group/documentation/assets/images/DateiTitel.jpg" class="img-fluid"/>
+                    </li>
+                    <li>
+                      <strong>Hervorgehobene Metadaten</strong>
+                      <p class="text-danger">Die hier eingebenen Daten werden nicht als Tab ausgegeben.</p>
+                      <div class="row">
+                        <div class="col">
+                          <img src="/wp-content/themes/da_vinci_group/documentation/assets/images/project-meta.PNG" class="img-fluid mb-5">
+                        </div>
+                        <div class="col">
+                          <p>Je nach der Breite des auf einer Archiv Seite getaggedtem Box-Layouts werden ein, zwei oder
+                            alle drei der eingegebenen Metadaten ausgegeben.</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ol>
+                </section>
+                <section id="frontpage" class="doc-section">
+                  <h2>Frontpage Inhlate</h2>
+                  <p>
+                    Die hier angelegten Inhlate werden zusammen mit den Immobilien Projekten auf den Seiten mit dem
+                    <a href="#project-archive">Projekt-Archiv Template</a> ausgegeben.
+                  </p>
+                  <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/project-archive.png">
+                </section>
+                <section id="team-member" class="doc-section">
+                  <h2>Team Miglieder</h2>
+                  <p>
+                    Diese Inhlate werden als automatisch generierte Übersicht ( Archiv ) ausgegeben.
+                  </p>
+                  <div class="callout-block callout-danger">
+                    <div class="icon-holder">
+                      <i class="fas fa-exclamation-triangle"></i>
+                    </div><!--//icon-holder-->
+                    <div class="content">
+                      <h4 class="callout-title">Keine Einzelseiten:</h4>
+                      <p>Achtung: Aktuell unterstützt das Template nicht die Ausgabe von Team-Miglieder
+                        Einzelseiten.</p>
+                    </div><!--//content-->
+                  </div>
+                  <h5>So funktioniert der Automatismus der Übersichtssteite der Team-Mitglieder</h5>
+                  <ol class="list">
+                    <li>
+                      <strong>Abfragen der "Team Tags"</strong>
+                      <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/team-tags.png">
+                      <p>Es werden alle Team Tags abgefragt, Tags bei denen kein Team Member gesetzt wurde werden dabei
+                        ausgelassen. Die Tags werden dann nach der eingegebenen Reinfolgennummer, absteigend
+                        sortiert.</p>
+                      <p>Für jedes Tag wird dann im Frontend eine neue Zeile ausgegeben. Diese Zeile enthält in der
+                        linken Spalte der Tag Name als Überschirft und der Subtitel ausgegeben.</p>
+                    </li>
+                    <li>
+                      <strong>Abfragen des Team Mitlgliedes</strong>
+                      <p>In Frontend werden dann zu jedem Tag die entsprechenden Team Mitglieder, sortiert nach Datum
+                        ausgegeben.</p>
+                      <p>Bitte beachten sie das die Bilder der Team Mitglieder im Verhältnis 4:3, aus dem Mittelpunkt
+                        heraus beschnitten ausgegeben werden.</p>
+                      <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/team-member.png">
+                    </li>
+                  </ol>
+                </section>
+              </div>
+            </section><!--//doc-section-->
+            <section id="page-templates" class="doc-section">
+              <h2 class="section-title">Seiten Templates</h2>
+              <div class="section-block">
+                <p>Das Template verfügt, neben den WordPress Standard Template über zwei Sonder-Templates. Templates
+                  können in der Seitenleiste des Backends ausgewählt werden.</p>
+                <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/pagetemplate-select.png">
+                <section id="indent-template" class="doc-section">
+                  <h2>Indent Template</h2>
+                  <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/indent-template.png">
+                  <div class="row">
+                    <div class="col">
+                      <p>Beim Indent Template wird der Seiteninhalt nach H2 Überschriften aufgeteilt und in einem zwie
+                        Spalten Layout ausgegeben. Bitte beachten sie das leere H2 Überschriften auch als leere
+                        Sektionen ausgegeben werden.</p>
+                    </div>
+                    <div class="col">
+                      <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/h2-split.png">
+                    </div>
+                  </div>
+                </section>
+                <section id="project-archive" class="doc-section">
+                  <h2>Projekt Archiv Template</h2>
+                  <p>
+                    Im diesem Template werden alle Inhlate der Typen Immobilien Projekt und Frontpage Inhalt ausgegeben.
+                    Diese Inhlate werden nach Kategorie gefiltert, diese Filter kann auf der jeweiligen Seite im Backend
+                    gesetzt werden und muss bei den Inhalten getagged sein.
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/project-archive-backend.png">
+                    </div>
+                    <div class="col">
+                      <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/project-single-backend.png">
+                    </div>
+                  </div>
+                  <p>Des weiteren kann im Seitenbackend ein Prefix für Tags gesetzt werden, diese Tags, angewendet auf
+                    das jeweilige Projekt bestimmen, wie die Inhalte dargestellt werden. Es stehen folgende Tags zur
+                    Darstellungssteuerung zur Verfügung:</p>
+                  <div class="row">
+                    <div class="col">
+                      <h5>Box Layouts:</h5>
+                      <ol class="list">
+                        <li>
+                          <strong>[prefix]-full</strong>
+                          <p>Ganzzeiliges Layout</p>
+                          <ul>
+                            <li>
+                              <strong>Zusatz: [prefix]-reverese</strong>
+                              <p>
+                                Gibt das ganzzeilige Layout mit dem Bild rechts aus.
+                              </p>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>[prefix]-half</strong>
+                          <p>Halbzeiliges Layout</p>
+                          <ul>
+                            <li>
+                              <strong>Zusatz: horizontal</strong>
+                              <p>
+                                Gibt das halbzeiliges Layout mit dem Bild oben aus, wenn der Tag "horizontal" zusätzlich zu [prefix]-half gesetzt wird.
+                              </p>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>[prefix]-quarter</strong>
+                          <p>Viertelzeiliges Layout</p>
+                        </li>
+                        <li>
+                          <strong>[prefix]-eighth</strong>
+                          <p>Achtel Layout</p>
+                          <p class="text-danger">Achtung: Vom eighth Layouts müssen immer 2 aufeinander folgen.</p>
+                        </li>
+                      </ol>
+                    </div>
+                    <div class="col">
+                      <h5>Layout Helfer:</h5>
+                      <p>Farbhelfer</p>
+                      <ol class="list">
+                        <li>
+                          <strong>[prefix]-darkblue - default</strong>
+                        </li>
+                        <li>
+                          <strong>[prefix]-lightblue</strong>
+                        </li>
+                        <li>
+                          <strong>[prefix]-turquise</strong>
+                        </li>
+                      </ol>
+                      <p>Responsive Helfer</p>
+                      <ol class="list">
+                        <li>
+                          <strong>[prefix]-hiddenmobile</strong>
+                          <p>Deises Element wird bis zu einer Bildschirmbreite von 1024px nicht angezeigt.</p>
+                        </li>
+                        <li>
+                          <strong>[prefix]-hiddendesktop</strong>
+                          <p>Deises Element wird ab einer Bildschirmbreite von 1024px nicht angezeigt.</p>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                  <h5>Sortierung</h5>
+                  <p>Per default werden die Projekte und Inhalte nach dem Veröffentlichungsdatum sortiert.</p>
+                  <p>Mit ausnahme der Kategorie "Startseite" hier werden die Inhlatytypen nach dem "Reihenfolge" Feld sortiert.</p>
+                </section>
+              </div>
+            </section>
+            <section id="shortcodes" class="doc-section">
+              <h2 class="section-title">Shortcodes</h2>
+              <div class="section-block">
+                <section id="shortcode-map" class="doc-section">
+                  <h2>Google Map</h2>
+                  <div class="row">
+                    <div class="col">
+                      <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/shortcode-map.PNG">
+                    </div>
+                    <div class="col">
+                      <h5>Google Map</h5>
+                      <code>
+                        [map lat="{längengrad}" lng="{breitengrad}" zoom="{zoomfaktor}"]
+                      </code>
+                      <p>Gibt im Frontend eine Google Karte mit ener Stecknadel am angegebenen Längen- und Breitengrad aus.</p>
+                    </div>
+                  </div>
+                </section>
+                <section id="contact-form" class="doc-section">
+                  <h2>Kontaktformular</h2>
+                  <div class="row">
+                    <div class="col">
+                      <img class="img-fluid mb-5" src="/wp-content/themes/da_vinci_group/documentation/assets/images/shortcode-contactform.PNG">
+                    </div>
+                    <div class="col">
+                      <h5>Kontaktformular</h5>
+                      <code>
+                        [contactform subject="{betreff}"]
+                      </code>
+                      <p>Gibt im Frontend das Kontaktformular aus. Mit dem optionalen Parameter "subject" kann die Betreffzeile des Formulars vor aus gefüllt werden.</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </section>
+          </div><!--//content-inner-->
+        </div><!--//doc-content-->
+        <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+          <div id="doc-nav" class="doc-nav">
+            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+              <a class="nav-link scrollto" href="#download-section">Technische Grundlagen</a>
+              <nav class="doc-sub-menu nav flex-column">
+                <a class="nav-link scrollto" href="#starter">Starter Theme</a>
+                <a class="nav-link scrollto" href="#css">CSS Framework</a>
+                <a class="nav-link scrollto" href="#js">Javascript</a>
+              </nav><!--//nav-->
+              <nav class="nav doc-menu flex-column sticky">
+                <a class="nav-link" href="#theme-settings">Theme Einstellungen</a>
+                <nav class="doc-sub-menu nav flex-column">
+                  <a class="nav-link scrollto" href="#grundeinstellungen">Theme Grundeinstellungen</a>
+                  <a class="nav-link scrollto" href="#theme-header">Kopfzeile</a>
+                  <a class="nav-link scrollto" href="#theme-footer">Fusszeile</a>
+                  <a class="nav-link scrollto" href="#project-single-setting">Projekt Einzelseite</a>
+                  <a class="nav-link scrollto" href="#team-archive-setting">Team Mitglieder Archiv</a>
+                  <a class="nav-link scrollto" href="#404">404 Seite</a>
+                </nav>
+              </nav>
+              <a class="nav-link scrollto" href="#content-types">Inhaltstypen</a>
+              <nav class="doc-sub-menu nav flex-column">
+                <a class="nav-link scrollto" href="#projects">Immobilien Projekte</a>
+                <a class="nav-link scrollto" href="#realestate">Immobilien</a>
+                <a class="nav-link scrollto" href="#frontpage">Frontpage Inhlate</a>
+                <a class="nav-link scrollto" href="#team-member">Team Mitglieder</a>
+              </nav><!--//nav-->
+              <a class="nav-link scrollto" href="#page-templates">Seiten Templates</a>
+              <nav class="doc-sub-menu nav flex-column">
+                <a class="nav-link scrollto" href="#indent-template">Indent</a>
+                <a class="nav-link scrollto" href="#project-archive">Projekt Archiv</a>
+              </nav><!--//nav-->
+              <a class="nav-link scrollto" href="#shortcodes">Shortcodes</a>
+              <nav class="doc-sub-menu nav flex-column">
+                <a class="nav-link scrollto" href="#shortcode-map">Map</a>
+                <a class="nav-link scrollto" href="#contact-form">Kontakt Formular</a>
+              </nav><!--//nav-->
+            </nav><!--//doc-menu-->
+
+          </div>
+        </div><!--//doc-sidebar-->
+      </div><!--//doc-body-->
+    </div><!--//container-->
+  </div><!--//doc-wrapper-->
+
+
+</div><!--//page-wrapper-->
+
+<footer id="footer" class="footer text-center">
+  <div class="container">
+    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+    <small class="copyright">Designed with <i class="fas fa-heart"></i> by
+      <a href="https://poppgerhard.at" target="_blank">Gerhard Hubert Popp</a></small>
+
+  </div><!--//container-->
+</footer><!--//footer-->
+
+
+<!-- Main Javascript -->
+<script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+</html>

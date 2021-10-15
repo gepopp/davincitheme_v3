@@ -1,0 +1,28 @@
+.content {
+  background-color: rgba(255, 255, 255, 0.5);
+
+  h1 {
+    color: $golden;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2, h3, h4 {
+    &:not(.intent) {
+      font-size: 1.875rem;
+      margin: 30px 0px 15px 0px;
+    }
+  }
+
+  h5, h6 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  p {
+    line-height: 1.25;
+    margin-bottom: 15px;
+  }
+}

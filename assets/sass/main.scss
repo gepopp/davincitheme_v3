@@ -1,0 +1,103 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+$golden: #CFA075;
+$darkblue: #162850;
+
+@import "banderole";
+@import "widgets";
+@import "content";
+@import "pannellum.css";
+
+body {
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: $darkblue;
+}
+
+*:focus, input:focus {
+  outline: none !important;
+}
+
+hr {
+  border-color: $golden;
+}
+
+.cls-1 {
+  fill: $golden;
+}
+
+.divider {
+  display: block;
+  position: relative;
+  border-top: .1rem solid $golden;
+  height: .1rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.fade-in {
+  transition: opacity .3s ease-in-out;
+}
+
+.page-template-pagetemplate-index, .page-template-pagetemplate-projectarchive {
+
+  .grid {
+    min-height: 516px;
+  }
+
+}
+
+.min-grid {
+  min-height: 516px;
+}
+
+
+.eighth {
+  min-height: 243px;
+
+  &:first-child {
+    margin-bottom: 30px;
+  }
+}
+
+/* purgecss ignore */
+[v-cloak] {
+  display: none;
+}
+
+iframe, .vue-map-container {
+  max-width: 100%;
+}
+
+.project-content {
+  h1, h2, h3 {
+    @apply text-golden font-semibold text-2xl my-5;
+  }
+}
+
+.wp-block-embed__wrapper {
+  width: 100%;
+
+  iframe {
+    width: 100%;
+    min-height: 480px;
+  }
+}
+.current-menu-item {
+  @apply font-semibold underline pb-2;
+}
+
+
+.tops-table{
+  tr{
+    &hover{
+      @apply bg-gray-300;
+    }
+  }
+  td{
+    @apply text-center border border-golden cursor-pointer;
+  }
+}
