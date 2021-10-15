@@ -90,7 +90,7 @@ foreach ( $top_data as $top ) {
     }
 </script>
 
-<?php get_template_part('project', 'inputrange') ?>
+<?php //get_template_part('project', 'inputrange') ?>
 
 <table class="border-golden w-full max-w-full border mb-5 tops-table" x-data="{ tops : tops }"
        @sort.window="function(e){ tops = sortTable(e.detail.sort, e.detail.direction, tops); $store.sort = e.detail.sort; $store.direction = e.detail.direction}">
