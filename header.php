@@ -30,7 +30,5 @@ extract($args);
 	</script>
 </head>
 <body <?php body_class(); ?> >
-<main class="bg-repeat-x w-full min-h-screen" style="
-              background-image: url(<?php echo get_field('field_5f207d5615988', 'option') ?>);
-              background-size: auto 50vh" id="app">
+<main class="bg-repeat-x w-full min-h-screen"  id="app">
 <?php get_template_part('headers', 'stickymenu', ['is_sticky' => $is_sticky]) ?>
