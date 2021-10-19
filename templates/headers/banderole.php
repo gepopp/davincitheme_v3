@@ -1,5 +1,5 @@
-<div class="py-10 hidden lg:block"></div>
-<div id="banderole" class="bg-lightblue shadow-lg z-50 mb-20 py-3">
+<div class="py-5 hidden lg:block"></div>
+<div id="banderole" class="bg-lightblue shadow-lg z-50 mb-10">
     <div class="container mx-auto flex justify-between content-center px-3  <?php echo is_singular( 'project' ) ? 'py-5' : ''  ?>">
         <a href="<?php echo home_url() ?>">
             <?php if ( ! is_singular( 'project' ) ): ?>

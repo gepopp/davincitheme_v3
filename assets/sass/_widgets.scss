@@ -1,18 +1,19 @@
-.footer-widget{
+.footer-widget {
   padding: 15px;
-  color:white;
+  color: white;
+  @apply text-golden;
 
-  .footer-widget-title{
+  .footer-widget-title {
     font-size: 18px;
     font-weight: bold;
   }
 
 
-  li.current-menu-item{
+  li.current-menu-item {
     text-decoration: none;
     border: none;
 
-    a{
+    a {
       text-decoration: underline;
     }
   }

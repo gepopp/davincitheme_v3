@@ -71,22 +71,9 @@ foreach ( $top_data as $top ) {
 
     function sortTable(sort, direction, tops){
 
-        if(sort != 'etage'){
             return  tops.sort(function(a,b){
-                return direction == 'up' ? b[sort] - a[sort] : a[sort] - b[sort];
+                return direction == 'up' ? a[sort] - b[sort]  : b[sort] - a[sort] ;
             });
-        }
-
-        return  tops.sort(function(a,b){
-            if(direction == 'up'){
-                if(a.etage < b.etage) { return -1; }
-                if(a.etage > b.etage) { return 1; }
-            }else{
-                if(a.etage > b.etage) { return -1; }
-                if(a.etage < b.etage) { return 1; }
-            }
-            return 0;
-        });
     }
 </script>
 
@@ -110,9 +97,6 @@ foreach ( $top_data as $top ) {
             <div class="flex items-center justify-center space-x-2">
                 <div>
                     <span x-text="window.translations.etage"></span>
-                </div>
-                <div>
-			        <?php get_template_part('project', 'tablesort', ['sort_by' => 'etage']) ?>
                 </div>
             </div>
         </th>
@@ -152,7 +136,7 @@ foreach ( $top_data as $top ) {
     </thead>
     <tbody>
     <template x-for="top in tops" x-key="top.top">
-        <tr>
+        <tr class="hover:bg-gray-300 bg-opacity-25">
             <td>
                 <span x-text="top.top"></span>
             </td>
@@ -190,7 +174,7 @@ foreach ( $top_data as $top ) {
             <td x-show="top.status == 'frei'">
                 <a :href="top.permalink" x-text="window.translations.details" class="underline"></a>
             </td>
-            <td x-show="top.status != 'frei'" colspan="4" class="text-white" :class="top.status == 'reserviert' ? ' bg-yellow-500 ' : ' bg-red-500 '">
+            <td x-show="top.status != 'frei'" colspan="4" class="text-white" :class="top.status == 'reserviert' ? ' bg-yellow-500 bg-opacity-75 ' : ' bg-red-500 bg-opacity-75 '">
                 <span x-text="top.status"></span>
             </td>
         </tr>

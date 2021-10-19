@@ -11,7 +11,7 @@ get_template_part('helper', 'open-body');
         <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-4">
             <div class="">
                 <h3 class="text-base font-bold mb-0 leading-none text-white"><?php the_field('field_5f216411f6f5a') ?></h3>
-                <h1 class="text-5xl text-golden leading-normal font-serif"><?php the_title() ?></h1>
+                <h1 class="text-5xl text-golden leading-normal"><?php the_title() ?></h1>
             </div>
             <div class="col-span-1 lg:col-span-2 bg-white">
 	            <?php if(has_post_thumbnail()): ?>
