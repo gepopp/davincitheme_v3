@@ -1,4 +1,4 @@
-<div class="bg-darkblue" style="margin-top: -2px;">
+<div class="bg-darkblue border-t-2 border-golden">
     <div class="container mx-auto px-3 xl:px-0">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4" style=" min-height: 0px">
             <div class="flex flex-col justify-center">

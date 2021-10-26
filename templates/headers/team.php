@@ -42,9 +42,9 @@ $slugs = array_column( $tags, 'slug' );
                 <h1 class="text-5xl text-golden leading-none"><?php the_field( 'field_5f25cdc71347c', 'option' ) ?></h1>
             </div>
             <div class="col-span-2 mb-10">
+                <p class="text-white mb-10"><?php the_field( 'field_5f25cdd41347e', 'option' ) ?></p>
                 <img src="<?php echo get_field( 'field_5f25cf9841c46', 'option' )['sizes']['custom-thumbnail'] ?>" class="w-full shadow-lg">
             </div>
-
         </div>
         <div class="grid lg:grid-cols-3 gap-4">
             <div class="relative"
@@ -70,9 +70,7 @@ $slugs = array_column( $tags, 'slug' );
                     </ul>
                 </div>
             </div>
-            <div class="col-span-2">
-                <p class="text-darkblue"><?php the_field( 'field_5f25cdd41347e', 'option' ) ?></p>
-            </div>
         </div>
     </div>
 </div>
+<?php  get_template_part('headers', 'close');
