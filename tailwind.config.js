@@ -1,11 +1,18 @@
 module.exports = {
     mode: 'jit',
-    purge: [
-        './**/*.php',
-        './resources/assets/**/*.vue',
-        './resources/assets/**/*.js',
-        './*.php',
-    ],
+    purge: {
+        content : [
+            './**/*.php',
+            './resources/assets/**/*.vue',
+            './resources/assets/**/*.js',
+            './*.php',
+        ],
+        safelist : [
+            'md:flex-row',
+            'space-x-10',
+            'md:space-x-2'
+        ]
+    },
     darkMode: false, // or 'media' or 'class'
     theme: {
         container: {

@@ -1,3 +1,17 @@
-.carousel__control[data-v-1d4b4bec] {
-  background-color: #CFA075 !important;
+.slide-leave-active[data-v-5ab113bc],
+.slide-enter-active[data-v-5ab113bc] {
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+.slide-enter[data-v-5ab113bc] {
+  -webkit-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+  -webkit-transition: -webkit-transform 1s linear;
+  transition: -webkit-transform 1s linear;
+  transition: transform 1s linear;
+  transition: transform 1s linear, -webkit-transform 1s linear;
+}
+.slide-leave-to[data-v-5ab113bc] {
+  -webkit-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
 }

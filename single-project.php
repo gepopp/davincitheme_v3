@@ -25,13 +25,10 @@ if ( ! empty( $gallery ) ):
 endif;
 ?>
     <div id="app">
-
 		<?php get_template_part( 'headers', 'banderole' ); ?>
-
-
-        <section class="container mx-auto px-5 lg:px-0">
+        <section class="container mx-auto px-5">
             <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10">
-                <div class="lg:my-24 mb-10 mt-24">
+                <div class="lg:my-24 mb-10 mt-10">
                     <h3 class="text-base font-bold mb-0 leading-none text-white">
 						<?php the_field( 'field_5f216411f6f5a' ) ?></h3>
                     <h1 class="text-3xl text-golden leading-none mb-8 break-words"><?php the_title() ?></h1>
@@ -47,16 +44,7 @@ endif;
 		<?php get_template_part( 'headers', 'close' ) ?>
 
         <section class="container mx-auto px-5">
-            <div class="bg-white col-span-3 p-5">
-                <div>
-                </div>
-            </div>
+            <?php get_template_part('project', 'menubar') ?>
         </section>
     </div>
 <?php get_footer() ?>
-<script>
-    import ImageLightBox from "./assets/js/components/ImageLightBox";
-    export default {
-        components: {ImageLightBox}
-    }
-</script>

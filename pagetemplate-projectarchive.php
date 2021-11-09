@@ -12,7 +12,9 @@ $types = get_terms([
 $locations = get_terms([
     'taxonomy' => 'project_location',
 ]);
-
+?>
+    <div class="mt-10"></div>
+<?php
 
 if (get_field('field_5f4ff2cd45951')): ?>
     <div class="container mx-auto mb-10 lg:px-0 px-3">

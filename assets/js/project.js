@@ -2,6 +2,8 @@ import Vue from "vue"
 import ImageCarousel from "./components/ImageCarousel.vue";
 import VueLazyLoad from 'vue-lazyload'
 import ImageLightBox from "./components/ImageLightBox.vue";
+import ProjectMenuBar from "./components/ProjectMenuBar.vue";
+import CanvasButton from "./components/CanvasButton.vue";
 
 Vue.use(VueLazyLoad)
 
@@ -13,5 +15,8 @@ const app = new Vue({
     components : {
         ImageCarousel,
         ImageLightBox,
+        ProjectMenuBar,
+        CanvasButton,
+
     }
 })

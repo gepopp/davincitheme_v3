@@ -4,8 +4,13 @@
  */
 
 get_header();
-get_template_part( 'headers', 'banderole' );
 ?>
+
+<?php
+get_template_part( 'headers', 'banderole' );
+
+?>
+    <div class="mt-10"></div>
     <div class="container mx-auto px-3 xl:px-0 mb-5">
         <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-4">
             <div class="">

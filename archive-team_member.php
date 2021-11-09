@@ -21,10 +21,9 @@ if ( $terms ) {
 }
 
 get_template_part( 'headers', 'banderole' );
-get_template_part('headers', 'team', ['tags' => $terms]);
+get_template_part( 'headers', 'team', [ 'tags' => $terms ] );
 
 ?>
-
     <section class="container mx-auto px-3 xl:px-0" style="
             background-image: url( <?php the_field( 'field_5f213eff8495d', 'option' ) ?>);
             background-size: 100% auto;

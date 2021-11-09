@@ -1,5 +1,5 @@
 <?php get_template_part('headers', 'open') ?>
-<div class="bg-lightblue shadow-lg py-3 lg:py-0 <?php !is_singular('project') ? 'mb-10' : '' ?>">
+<div class="bg-lightblue shadow-lg py-3 lg:py-0 <?php !is_singular('project') ? 'mb-10' : '' ?>" id="banderole" >
     <div class="container mx-auto flex justify-between content-center px-3  <?php echo is_singular( 'project' ) ? 'py-5' : '' ?>">
         <a href="<?php echo home_url() ?>">
 			<?php if ( ! is_singular( 'project' ) ): ?>
@@ -27,7 +27,7 @@
 </div>
 <?php if(is_singular('project')): ?>
 <div class="bg-golden">
-    <div class="container py-2">
+    <div class="container py-2 px-3">
         <p class="text-white font-semibold"><?php _e('Projekt: ', 'davincitheme') ?><?php the_title() ?></p>
     </div>
 </div>

@@ -5,26 +5,15 @@ extract( $args )
 ?>
 
 <?php if ( ! $is_sticky ): ?>
-<script>
-    function isInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.bottom >= 0
-        );
-    }
-</script>
-
-
 <div class="fixed top w-full" style="z-index: 9999"
      x-data="{ show : false }"
      x-cloak
      x-show="show"
-     x-init="
-        document.addEventListener('scroll', function () {
-            show = !isInViewport(document.querySelector('#banderole'));
-        }, {
-            passive: true
-        });">
+     @scroll.window="(e) => {
+            const rect = document.querySelector('#banderole').getBoundingClientRect();
+            show = rect.bottom <= 0;
+     }"
+     x-init="">
 	<?php else: ?>
     <div class="fixed top w-full" style="z-index: 9999">
 		<?php endif; ?>
@@ -70,9 +59,4 @@ extract( $args )
             </div>
 			<?php get_template_part( 'headers', 'mobilemenu' ) ?>
         </section>
-
-		<?php if ( is_singular( 'project' ) ): ?>
-			<?php get_template_part( 'headers', 'menuextend' ) ?>
-		<?php endif; ?>
-
     </div>
