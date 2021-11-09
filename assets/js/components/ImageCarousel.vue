@@ -1,5 +1,5 @@
 <template>
-  <vue-carousel :data="slides" indicator-type="line" :slideOnSwipe="false"></vue-carousel>
+  <vue-carousel :data="slides" indicator-type="line" :slideOnSwipe="true"></vue-carousel>
 </template>
 
 
@@ -15,20 +15,20 @@ export default {
   computed: {
     slides: function () {
       var slides = [];
-      this.images.map(function (url) {
+      this.images.map((url, index) => {
 
-        var slide = '<div class="slider">' +
-          '<img src="' + url.url + '" class="w-full">' +
-          '</div>';
+        var slide = '<div class="slider" @click="$root.$emit(\'openlightbox\', { index : ' + index + ' })">' +
+            '<img src="' + url.url + '" class="w-full">' +
+            '</div>';
         slides.push(slide);
       })
       return slides;
     }
-  }
 
+  },
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

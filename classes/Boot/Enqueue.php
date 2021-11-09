@@ -43,6 +43,12 @@ class Enqueue {
 				'details'     => __( 'Details' ),
 			]
 		);
+
+		if(is_singular('project')){
+			wp_enqueue_script('davinci_project_js', get_stylesheet_directory_uri() . '/dist/project.js', [], null, true);
+		}
 	}
+
+
 
 }

@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isProduction = 'production' === process.env.NODE_ENV;
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
-const { VueLoaderPlugin } = require('vue-loader')
+const {VueLoaderPlugin} = require('vue-loader')
 
 // Set the build prefix.
 let prefix = isProduction ? '.min' : '';
@@ -13,6 +13,7 @@ let prefix = isProduction ? '.min' : '';
 const config = {
     entry: {
         main: './assets/js/main.js',
+        project: './assets/js/project.js'
     },
     output: {
         filename: `[name]${prefix}.js`,
@@ -58,7 +59,11 @@ const config = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader',
+                use: [
+                    'vue-style-loader',
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader',
                     {
                         loader: 'postcss-loader',
                         options: {
@@ -94,7 +99,7 @@ if (process.env.SERVER) {
     config.plugins.push(
         new BrowserSyncPlugin(
             {
-                proxy: 'https://ir.test',
+                proxy: 'https://davinci.test',
                 https: true,
                 files: [
                     '**/*.php',

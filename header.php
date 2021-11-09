@@ -30,5 +30,5 @@ extract($args);
 	</script>
 </head>
 <body <?php body_class(); ?> >
-<main class="bg-repeat-x w-full min-h-screen"  id="app">
+<main class="bg-repeat-x w-full min-h-screen">
 <?php get_template_part('headers', 'stickymenu', ['is_sticky' => $is_sticky]) ?>

@@ -1,37 +1,62 @@
 <?php
 
 the_post();
-get_header( null, [ 'is_sticky' => true ] ); ?>
+get_header();
+
+$gallery = get_field( 'field_5f21b237e2f60' );
+if ( ! empty( $gallery ) ):
+	$urls     = [];
+	$lightbox = [];
+	foreach ( $gallery as $img ) {
+
+		$urls[] = [
+			'url'    => $img['sizes']['16by9'],
+			'is_360' => get_field( 'field_5f4e73ada2722', $img['ID'] ),
+		];
 
 
-<section class="container mx-auto px-5" style="
-        background-image: url( <?php the_field( 'field_5f213eff8495d', 'option' ) ?>);
-        background-size: 100% auto;
-        background-repeat: no-repeat;
-        background-position: bottom left;
-        padding-bottom: <?php the_field( 'field_5f2141a728d7c', 'option' ) ?>px">
+		$lightbox[] = [
+			'thumb'   => $img['sizes']['thumbnail'],
+			'src'     => $img['url'],
+			'caption' => $img['caption'],
+		];
 
-    <div class="grid grid-cols-1 lg:grid-cols-4 lg:gap-10 pt-40">
-        <div class="mb-10 ">
-            <div>
-                <h3 class="text-base font-bold mb-0 leading-none text-white">
-					<?php the_field( 'field_5f216411f6f5a' ) ?></h3>
-                <h1 class="text-3xl text-golden leading-none mb-8 break-words"><?php the_title() ?></h1>
-            </div>
-            <div class="col-span-2 text-white bg-lightblue p-3" x-data="{ open : false }">
-                <div :class="!open ? 'line-clamp-5 lg:line-clamp-none' : ''" x-transition>
-					<?php the_field( 'field_5f21641ef6f5b', null, false ) ?>
+	}
+endif;
+?>
+    <div id="app">
+
+		<?php get_template_part( 'headers', 'banderole' ); ?>
+
+
+        <section class="container mx-auto px-5 lg:px-0">
+            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10">
+                <div class="my-24">
+                    <h3 class="text-base font-bold mb-0 leading-none text-white">
+						<?php the_field( 'field_5f216411f6f5a' ) ?></h3>
+                    <h1 class="text-3xl text-golden leading-none mb-8 break-words"><?php the_title() ?></h1>
+                    <div class="text-white text-sm"><?php the_field( 'field_5f21641ef6f5b', null, false ) ?></p>
+                    </div>
                 </div>
-                <div class="flex justify-end mt-5 lg:hidden">
-                    <p @click="open = !open" x-transition x-text="open ? 'weniger' : 'mehr'" class="cursor-pointer underline"></p>
+                <div class="my-24">
+                    <image-carousel :images="<?php echo htmlspecialchars( json_encode( $urls, ENT_QUOTES ) ) ?>"></image-carousel>
+                    <image-light-box :media="<?php echo htmlspecialchars( json_encode( $lightbox, ENT_QUOTES ) ) ?>"></image-light-box>
+                </div>
+        </section>
+
+		<?php get_template_part( 'headers', 'close' ) ?>
+
+        <section class="container mx-auto px-5">
+            <div class="bg-white col-span-3 p-5">
+                <div>
                 </div>
             </div>
-        </div>
-        <div class="bg-white col-span-3 p-5" x-data="{ current : '' }" @tab.window="tab => current = tab.detail">
-            <div x-show="current == 'Apartments'" x-cloak class="overflow-x-scroll">
-				<?php get_template_part( 'project', 'appartments' ) ?>
-            </div>
-        </div>
+        </section>
     </div>
-</section>
 <?php get_footer() ?>
+<script>
+    import ImageLightBox from "./assets/js/components/ImageLightBox";
+    export default {
+        components: {ImageLightBox}
+    }
+</script>
