@@ -56,16 +56,6 @@
         </canvas-button>
 	<?php endif; ?>
 
-	<?php if ( ! empty( get_field( 'field_5f4f6e8c3d811' ) ) ): ?>
-        <canvas-button id="<?php _e( '360° Panoramas', 'davincigroup' ) ?>">
-            <div class="pb-2">
-                <svg class="w-6 h-6 text-golden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-                </svg>
-            </div>
-        </canvas-button>
-	<?php endif; ?>
-
 
 	<?php if ( ! empty( get_field( 'field_5f22e219caec9' ) ) ): ?>
         <canvas-button id="<?php _e( 'Gebäude', 'davincigroup' ) ?>">

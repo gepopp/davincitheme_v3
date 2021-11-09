@@ -31,15 +31,6 @@ export default {
   },
   methods: {
     mounted() {
-
-
-      // window.events.$on('canvasBtnClick', function () {
-      //   var element = document.getElementById('canvas-spacer');
-      //   element.scrollIntoView({
-      //     block: "start",
-      //     behavior: "smooth"
-      //   });
-      // });
     }
   }
 }

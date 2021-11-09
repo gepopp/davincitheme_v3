@@ -14,9 +14,8 @@ export default {
     }
   },
   mounted() {
-    // this.contents = this.$children;
-    // window.events.$emit('canvasBtnClick',  this.$children[0].$props.id);
-
+    this.contents = this.$children;
+    this.$root.$emit('canvasBtnClick', this.$children[0].$props.id);
   }
 }
 </script>

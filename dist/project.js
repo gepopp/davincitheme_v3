@@ -429,7 +429,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"ProjectCanvas\",\n\n  data() {\n    return {\n      contents: []\n    };\n  },\n\n  mounted() {// this.contents = this.$children;\n    // window.events.$emit('canvasBtnClick',  this.$children[0].$props.id);\n  }\n\n});\n\n//# sourceURL=webpack://davincitheme_v3/./assets/js/components/ProjectCanvas.vue?./node_modules/babel-loader/lib/index.js??clonedRuleSet-2%5B0%5D.rules%5B0%5D!./node_modules/vue-loader/lib/index.js??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"ProjectCanvas\",\n\n  data() {\n    return {\n      contents: []\n    };\n  },\n\n  mounted() {\n    this.contents = this.$children;\n    this.$root.$emit('canvasBtnClick', this.$children[0].$props.id);\n  }\n\n});\n\n//# sourceURL=webpack://davincitheme_v3/./assets/js/components/ProjectCanvas.vue?./node_modules/babel-loader/lib/index.js??clonedRuleSet-2%5B0%5D.rules%5B0%5D!./node_modules/vue-loader/lib/index.js??vue-loader-options");
 
 /***/ }),
 
@@ -451,7 +451,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Con
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"ProjectMenuBar\",\n  components: {},\n  props: {\n    lower: {\n      default: false\n    }\n  },\n\n  data() {\n    return {\n      marginLeft: 0,\n      arrows: false,\n      isOverflowing: false,\n      sticky: false,\n      menuEntries: 0\n    };\n  },\n\n  methods: {\n    mounted() {// window.events.$on('canvasBtnClick', function () {\n      //   var element = document.getElementById('canvas-spacer');\n      //   element.scrollIntoView({\n      //     block: \"start\",\n      //     behavior: \"smooth\"\n      //   });\n      // });\n    }\n\n  }\n});\n\n//# sourceURL=webpack://davincitheme_v3/./assets/js/components/ProjectMenuBar.vue?./node_modules/babel-loader/lib/index.js??clonedRuleSet-2%5B0%5D.rules%5B0%5D!./node_modules/vue-loader/lib/index.js??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"ProjectMenuBar\",\n  components: {},\n  props: {\n    lower: {\n      default: false\n    }\n  },\n\n  data() {\n    return {\n      marginLeft: 0,\n      arrows: false,\n      isOverflowing: false,\n      sticky: false,\n      menuEntries: 0\n    };\n  },\n\n  methods: {\n    mounted() {}\n\n  }\n});\n\n//# sourceURL=webpack://davincitheme_v3/./assets/js/components/ProjectMenuBar.vue?./node_modules/babel-loader/lib/index.js??clonedRuleSet-2%5B0%5D.rules%5B0%5D!./node_modules/vue-loader/lib/index.js??vue-loader-options");
 
 /***/ }),
 

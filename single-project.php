@@ -24,28 +24,32 @@ if ( ! empty( $gallery ) ):
 	}
 endif;
 ?>
-    <div id="app">
-		<?php get_template_part( 'headers', 'banderole' ); ?>
-        <section class="container mx-auto px-5">
-            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10">
-                <div class="lg:my-24 mb-10 mt-10">
-                    <h3 class="text-base font-bold mb-0 leading-none text-white">
-						<?php the_field( 'field_5f216411f6f5a' ) ?></h3>
-                    <h1 class="text-3xl text-golden leading-none mb-8 break-words"><?php the_title() ?></h1>
-                    <div class="text-white text-sm"><?php the_field( 'field_5f21641ef6f5b', null, false ) ?></p>
-                    </div>
+<div id="app">
+	<?php get_template_part( 'headers', 'banderole' ); ?>
+    <section class="container mx-auto px-5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10">
+            <div class="lg:my-24 mb-10 mt-10">
+                <h3 class="text-base font-bold mb-0 leading-none text-white">
+					<?php the_field( 'field_5f216411f6f5a' ) ?></h3>
+                <h1 class="text-3xl text-golden leading-none mb-8 break-words"><?php the_title() ?></h1>
+                <div class="text-white text-sm"><?php the_field( 'field_5f21641ef6f5b', null, false ) ?></p>
                 </div>
-                <div class="lg:my-24 mb-10">
+            </div>
+            <div class="lg:my-24 mb-10">
+				<?php if ( ! empty( $gallery ) ): ?>
                     <image-carousel :images="<?php echo htmlspecialchars( json_encode( $urls, ENT_QUOTES ) ) ?>"></image-carousel>
                     <image-light-box :media="<?php echo htmlspecialchars( json_encode( $lightbox, ENT_QUOTES ) ) ?>"></image-light-box>
-                </div>
-        </section>
+				<?php else: ?>
+					<?php the_post_thumbnail( '16by9' ); ?>
+				<?php endif; ?>
+            </div>
+    </section>
 
-		<?php get_template_part( 'headers', 'close' ) ?>
+	<?php get_template_part( 'headers', 'close' ) ?>
 
-        <section class="container mx-auto px-5">
-            <?php get_template_part('project', 'menubar') ?>
-            <?php get_template_part('project', 'canvas') ?>
-        </section>
-    </div>
+    <section class="container mx-auto px-5">
+		<?php get_template_part( 'project', 'menubar' ) ?>
+		<?php get_template_part( 'project', 'canvas' ) ?>
+    </section>
+</div>
 <?php get_footer() ?>
