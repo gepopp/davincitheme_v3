@@ -7,9 +7,10 @@ import CanvasButton from "./components/CanvasButton.vue";
 import ProjectCanvas from "./components/ProjectCanvas.vue";
 import ProjectCanvasContent from "./components/ProjectCanvasContent.vue";
 import TopsTable from "./components/TopsTable.vue";
+import ContactForm from "./components/ContactForm.vue";
+import VueBingMaps from 'vue-bing-maps'
 
-
-
+Vue.use(VueBingMaps)
 Vue.use(VueLazyLoad)
 
 var Emitter = require('tiny-emitter');
@@ -17,7 +18,7 @@ var emitter = new Emitter();
 
 const app = new Vue({
     el: '#app',
-    components : {
+    components: {
         ImageCarousel,
         ImageLightBox,
         ProjectMenuBar,
@@ -25,6 +26,6 @@ const app = new Vue({
         ProjectCanvas,
         ProjectCanvasContent,
         TopsTable,
-
+        ContactForm,
     }
 })

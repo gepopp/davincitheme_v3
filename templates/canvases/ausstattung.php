@@ -2,6 +2,10 @@
     <project-canvas-content id="<?php _e('Ausstattung', 'davincigroup' ) ?>">
         <div class="container mx-auto p-5">
             <div class="grid grid-cols-4 gap-5">
+                <div class="hidden md:block px-5 border-r border-golden">
+                    <h2 class="text-2xl text-golden mb-3">Kontakt</h2>
+                    <contact-form></contact-form>
+                </div>
                 <div class="col-span-4 lg:col-span-3">
                     <?php foreach (get_field('field_5f22e2d2ee8aa') as $item): ?>
                         <div class="grid grid-cols-3 gap-5 flex flex-col">
@@ -20,7 +24,6 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <?php \Tonik\Theme\App\template('project/sidebar');  ?>
             </div>
         </div>
     </project-canvas-content>

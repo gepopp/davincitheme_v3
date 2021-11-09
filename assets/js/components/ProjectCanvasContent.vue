@@ -9,9 +9,14 @@
 </template>
 
 <script>
+import ContactForm from "./ContactForm.vue";
+
 export default {
   name: "ProjectCanvasContent",
   props: {'id':{}, activeStart:false},
+  components:{
+    ContactForm
+  },
   data(){
     return{
       show: this.activeStart

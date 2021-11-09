@@ -3,6 +3,10 @@
     <project-canvas-content id="<?php _e('Downloads', 'davincigroup' ) ?>">
         <div class="container mx-auto p-5">
             <div class="grid grid-cols-4 gap-5">
+                <div class="hidden md:block px-5 border-r border-golden">
+                    <h2 class="text-2xl text-golden mb-3">Kontakt</h2>
+                    <contact-form></contact-form>
+                </div>
                 <div class="col-span-4 lg:col-span-3">
                     <h3 class="text-2xl text-golden font-medium mb-5">
                         <?php echo count($downloads) ?> <?php if (count($downloads) > 1): _e('Downloads', 'davincigroup'); else:  _e('Download', 'davincigroup'); endif; ?>
@@ -23,7 +27,6 @@
                         <?php endforeach; ?>
                     </ul>
                 </div>
-                <?php \Tonik\Theme\App\template('project/sidebar'); ?>
             </div>
         </div>
     </project-canvas-content>
