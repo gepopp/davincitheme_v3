@@ -8,12 +8,12 @@
     </div>
     <div class="grid lg:grid-cols-2 gap-4">
       <div>
-        <label>Ihr Name</label>
+        <label>Name</label>
         <input type="text" v-model="values.name" class="border-b w-full" :class="{'border-red-400': errors.name }" required>
         <small class="text-xs text-red-400" v-if="errors.name" v-text="errors.name"></small>
       </div>
       <div>
-        <label>Ihre E-Mail-Adresse</label>
+        <label>E-Mail</label>
         <input type="email" v-model="values.email" class="border-b w-full" :class="{'border-red-400': errors.email }" required>
         <small class="text-xs text-red-400" v-if="errors.email" v-text="errors.email"></small>
       </div>

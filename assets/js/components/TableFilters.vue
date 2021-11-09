@@ -14,7 +14,7 @@
               tooltip="none"
               :dotSize="25"
               v-model="price"
-              @change="emitData">
+              @change="emitData(false)">
           </vue-slider>
         </div>
       </div>
@@ -32,7 +32,7 @@
               tooltip="none"
               :dotSize="25"
               v-model="rent"
-              @change="emitData">
+              @change="emitData(false)">
           </vue-slider>
         </div>
       </div>
@@ -51,7 +51,7 @@
               tooltip="none"
               :dotSize="25"
               v-model="wfl"
-              @change="emitData">
+              @change="emitData(false)">
           </vue-slider>
         </div>
       </div>
@@ -69,7 +69,7 @@
               tooltip="none"
               :dotSize="25"
               v-model="rooms"
-              @change="emitData">
+              @change="emitData(false)">
           </vue-slider>
         </div>
       </div>
@@ -83,7 +83,8 @@
 
       <div class="col-span-1 mb-3">
         <div class="text-golden">
-          <div class="bg-golden text-white py-2 px-5 cursor-pointer text-center inline" @click="resetFilters">zurücksetzten</div>
+          <div class="bg-golden text-white py-2 px-5 cursor-pointer text-center shadow-xl" @click="emitData(true)">Filtern</div>
+          <div class="mt-5 cursor-pointer" @click="resetFilters">zurücksetzten</div>
         </div>
       </div>
     </div>
@@ -110,13 +111,14 @@ export default {
     }
   },
   methods: {
-    emitData() {
+    emitData(close = false) {
       this.$root.$emit('tableFilter', {
         price: this.price,
         rent: this.rent,
         rooms: this.rooms,
         wfl: this.wfl,
-        frei: this.frei
+        frei: this.frei,
+        close : close
       })
     },
     calculateDivider(min, max) {

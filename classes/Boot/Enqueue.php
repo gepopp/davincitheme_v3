@@ -18,7 +18,13 @@ class Enqueue {
 
 	function register_scripts() {
 
-		wp_enqueue_script( 'davinci_theme_js', get_stylesheet_directory_uri() . '/dist/main.js', [], null, true );
+		$ext = '';
+		if(!WP_DEBUG){
+			$ext = '.min';
+		}
+
+
+		wp_enqueue_script( 'davinci_theme_js', get_stylesheet_directory_uri() . "/dist/main{$ext}.js", [], null, true );
 		wp_localize_script( 'davinci_theme_js', 'translations',
 			[
 				'filtern'     => __( 'Jetzt Filtern', 'davincigroup' ),
@@ -45,7 +51,7 @@ class Enqueue {
 		);
 
 		if(is_singular('project')){
-			wp_enqueue_script('davinci_project_js', get_stylesheet_directory_uri() . '/dist/project.js', [], null, true);
+			wp_enqueue_script('davinci_project_js', get_stylesheet_directory_uri() . "/dist/project{$ext}.js", [], null, true);
 		}
 	}
 
