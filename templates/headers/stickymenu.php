@@ -10,6 +10,12 @@ extract( $args )
      x-cloak
      x-show="show"
      @scroll.window="(e) => {
+     console.log('scroll')
+            const rect = document.querySelector('#banderole').getBoundingClientRect();
+            show = rect.bottom <= 0;
+     }"
+     @wheel.window="(e) => {
+     console.log('wheel')
             const rect = document.querySelector('#banderole').getBoundingClientRect();
             show = rect.bottom <= 0;
      }"
