@@ -1,5 +1,5 @@
 <template>
-  <div class="p-3">
+  <div class="p-3" >
     <h2 class="text-2xl text-golden mb-3">Filtern</h2>
     <div class="grid grid-cols-1">
 
@@ -147,6 +147,7 @@ export default {
       this.wfl = [this.minWfl, this.maxWfl];
       this.rooms = [this.minRooms, this.maxRooms];
       this.frei = false;
+      this.emitData();
     },
 
   }

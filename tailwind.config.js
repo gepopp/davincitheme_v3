@@ -52,6 +52,9 @@ module.exports = {
             },
             height: {
                 'halfscreen': '50vh'
+            },
+            minHeight : {
+                halfscreen : '50vh'
             }
         },
     },
