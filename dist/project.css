@@ -1,17 +1,20 @@
-.slide-leave-active[data-v-5ab113bc],
-.slide-enter-active[data-v-5ab113bc] {
-  -webkit-transition: 200ms;
-  transition: 200ms;
+.fade-enter-active[data-v-68e7d1ee], .fade-leave-active[data-v-68e7d1ee] {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
-.slide-enter[data-v-5ab113bc] {
-  -webkit-transform: translate(-100%, 0);
-  transform: translate(-100%, 0);
-  -webkit-transition: -webkit-transform 1s linear;
-  transition: -webkit-transform 1s linear;
-  transition: transform 1s linear;
-  transition: transform 1s linear, -webkit-transform 1s linear;
+.fade-enter[data-v-68e7d1ee], .fade-leave-to[data-v-68e7d1ee] {
+  opacity: 0;
 }
-.slide-leave-to[data-v-5ab113bc] {
-  -webkit-transform: translate(-100%, 0);
-  transform: translate(-100%, 0);
+.fade-enter-active[data-v-5a752042], .fade-leave-active[data-v-5a752042] {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.fade-enter[data-v-5a752042], .fade-leave-to[data-v-5a752042] {
+  opacity: 0;
+}
+.ps__rail-x[data-v-5a752042] {
+  background-color: #1C6D8B;
+}
+.ps__thumb-x[data-v-5a752042] {
+  background-color: #CFA075;
 }

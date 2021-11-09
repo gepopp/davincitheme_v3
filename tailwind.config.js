@@ -1,16 +1,29 @@
 module.exports = {
-    mode: 'jit',
     purge: {
         content : [
             './**/*.php',
-            './resources/assets/**/*.vue',
-            './resources/assets/**/*.js',
+            './assets/**/*.vue',
+            './assets/**/*.js',
             './*.php',
         ],
         safelist : [
             'md:flex-row',
             'space-x-10',
-            'md:space-x-2'
+            'md:space-x-2',
+            'grid-cols-5',
+            'col-span-4',
+            'grid-cols-8',
+            'gap-3',
+            'border-r',
+            'border-b',
+            'border-golden',
+            'hover:bg-gray-100',
+            'bg-clip-content',
+            'col-span-2',
+            'font-semibold',
+            'md:block',
+            'col-span-5',
+            'md:col-span-4'
         ]
     },
     darkMode: false, // or 'media' or 'class'

@@ -18,7 +18,7 @@ export default {
     }
   },
   mounted() {
-    window.events.$on('canvasBtnClick', (id)=>{
+    this.$root.$on('canvasBtnClick', (id)=>{
       if(this.id == id){
         this.show = true
       }else{
@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }

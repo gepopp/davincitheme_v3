@@ -28,6 +28,10 @@ const config = {
     module: {
         rules: [
             {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
+            },
+            {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {

@@ -4,6 +4,11 @@ import VueLazyLoad from 'vue-lazyload'
 import ImageLightBox from "./components/ImageLightBox.vue";
 import ProjectMenuBar from "./components/ProjectMenuBar.vue";
 import CanvasButton from "./components/CanvasButton.vue";
+import ProjectCanvas from "./components/ProjectCanvas.vue";
+import ProjectCanvasContent from "./components/ProjectCanvasContent.vue";
+import TopsTable from "./components/TopsTable.vue";
+
+
 
 Vue.use(VueLazyLoad)
 
@@ -17,6 +22,9 @@ const app = new Vue({
         ImageLightBox,
         ProjectMenuBar,
         CanvasButton,
+        ProjectCanvas,
+        ProjectCanvasContent,
+        TopsTable,
 
     }
 })

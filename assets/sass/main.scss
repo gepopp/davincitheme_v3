@@ -114,3 +114,21 @@ iframe, .vue-map-container {
 .carousel__indicator::before{
   height: 5px !important;
 }
+
+
+.vue-slider-process {
+  background-color: #CFA075;
+
+}
+
+.vue-slider-dot-handle {
+  width: 25px;
+  height: 25px;
+  background-color:  #CFA075;
+  border-radius: 50%;
+  @apply shadow-xl;
+}
+
+.vue-slider-rail {
+  background: #162850;
+}

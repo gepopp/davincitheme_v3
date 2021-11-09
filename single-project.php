@@ -45,6 +45,7 @@ endif;
 
         <section class="container mx-auto px-5">
             <?php get_template_part('project', 'menubar') ?>
+            <?php get_template_part('project', 'canvas') ?>
         </section>
     </div>
 <?php get_footer() ?>

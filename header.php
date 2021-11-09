@@ -28,6 +28,7 @@ extract($args);
         gtag('js', new Date());
         gtag('config', 'UA-151997158-1');
 	</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 <body <?php body_class(); ?> >
 <main class="bg-repeat-x w-full min-h-screen">
