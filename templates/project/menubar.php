@@ -1,4 +1,5 @@
 <project-menu-bar>
+
 	<?php
 	$group = get_field( 'field_5f5c7c78415e9' );
 	$tops  = new WP_Query( [
@@ -35,6 +36,16 @@
 	endif;
 	?>
 
+    <?php if(is_singular('immobilie')): ?>
+        <canvas-button id="<?php _e( 'Eckdaten', 'davincigroup' ) ?>" active-start="true">
+            <div class="pb-2">
+                <svg class="w-6 h-6 text-golden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                </svg>
+            </div>
+        </canvas-button>
+    <?php endif; ?>
+
 
 	<?php if ( ! empty( get_the_content() ) ): ?>
         <canvas-button id="<?php _e( 'Beschreibung', 'davincigroup' ) ?>">
@@ -47,6 +58,16 @@
 	<?php endif; ?>
 
 	<?php if ( ! empty( get_field( 'field_5f22e62fee8ac' ) ) ): ?>
+        <canvas-button id="<?php _e( '360° Rundgang', 'davincigroup' ) ?>">
+            <div class="pb-2">
+                <svg class="w-6 h-6 text-golden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                </svg>
+            </div>
+        </canvas-button>
+	<?php endif; ?>
+
+	<?php if ( ! empty( get_field( 'field_60bdd0c93fd7a' ) ) ): ?>
         <canvas-button id="<?php _e( '360° Rundgang', 'davincigroup' ) ?>">
             <div class="pb-2">
                 <svg class="w-6 h-6 text-golden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -99,5 +120,14 @@
         </canvas-button>
 	<?php endif; ?>
 
+	<?php if ( ! empty( get_field( 'oii_anh_GRUNDRISS' ) ) ): ?>
+        <canvas-button id="<?php _e( 'Grundriss', 'davincigroup' ) ?>">
+            <div class="pb-2">
+                <svg class="w-6 h-6 text-golden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                </svg>
+            </div>
+        </canvas-button>
+	<?php endif; ?>
 
 </project-menu-bar>

@@ -7,6 +7,20 @@ $gallery = get_field( 'field_5f21b237e2f60' );
 if ( ! empty( $gallery ) ):
 	$urls     = [];
 	$lightbox = [];
+
+    if(has_post_thumbnail()){
+	    $urls[] = [
+		    'url' => get_the_post_thumbnail_url(null, '16by9')
+	    ];
+	    $lightbox[] = [
+		    'thumb'   => get_the_post_thumbnail_url(null, 'thumbnail'),
+		    'src'     => get_the_post_thumbnail_url(null, 'full'),
+		    'caption' => get_the_post_thumbnail_caption(),
+	    ];
+    }
+
+
+
 	foreach ( $gallery as $img ) {
 
 		$urls[] = [
@@ -40,7 +54,11 @@ endif;
                     <image-carousel :images="<?php echo htmlspecialchars( json_encode( $urls, ENT_QUOTES ) ) ?>"></image-carousel>
                     <image-light-box :media="<?php echo htmlspecialchars( json_encode( $lightbox, ENT_QUOTES ) ) ?>"></image-light-box>
 				<?php else: ?>
-					<?php the_post_thumbnail( '16by9' ); ?>
+                    <div class="relative pt-5625 bg-turquise">
+                        <div class="absolute top-0 left-0 h-full w-full flex items-center justify-center text-white">
+                            <span>Bilder folgen</span>
+                        </div>
+                    </div>
 				<?php endif; ?>
             </div>
     </section>
