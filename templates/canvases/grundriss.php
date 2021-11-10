@@ -24,24 +24,25 @@
                             </div>
                         </div>
 
-					<?php elseif ( count( $grundrisse ) == 1 ): ?>
-                        <div class="relative w-full lg:pt-75 h-halfscreen lg:h-auto">
-                            <div class="absolute top-0 left-0 w-full h-halfscreen lg:h-full bg-darkblue">
-								<?php if ( $grundrisse[0]['subtype'] == 'pdf' ): ?>
-                                    <div class="hidden lg:block h-full">
-                                        <object data="<?php echo $grundrisse[0]['url'] ?>" class="w-full h-full"></object>
-                                    </div>
-                                    <div class="lg:hidden w-full h-full flex items-center justify-center">
-                                        <a href="<?php echo $grundrisse[0]['url'] ?>" target="_blank" class="bg-golden p-3 text-center text-white">
-											<?php _e( 'PDF Download', 'davincigroup' ) ?>
-                                        </a>
-                                    </div>
-								<?php else: ?>
-                                    <img src="<?php echo $grundrisse[0]['sizes']['custom-thumbnail'] ?>" class="w-full h-auto">
-								<?php endif; ?>
+					<?php else: ?>
+						<?php foreach ( $grundrisse as $grundriss ): ?>
+                            <div class="relative w-full lg:pt-75 h-halfscreen lg:h-auto">
+                                <div class="absolute top-0 left-0 w-full h-halfscreen lg:h-full bg-darkblue">
+									<?php if ( $grundrisse[0]['subtype'] == 'pdf' ): ?>
+                                        <div class="hidden lg:block h-full">
+                                            <object data="<?php echo $grundrisse[0]['url'] ?>" class="w-full h-full"></object>
+                                        </div>
+                                        <div class="lg:hidden w-full h-full flex items-center justify-center">
+                                            <a href="<?php echo $grundrisse[0]['url'] ?>" target="_blank" class="bg-golden p-3 text-center text-white">
+												<?php _e( 'PDF Download', 'davincigroup' ) ?>
+                                            </a>
+                                        </div>
+									<?php else: ?>
+                                        <img src="<?php echo $grundrisse[0]['sizes']['custom-thumbnail'] ?>" class="w-full h-auto">
+									<?php endif; ?>
+                                </div>
                             </div>
-                        </div>
-
+						<?php endforeach; ?>
 					<?php endif; ?>
 
                 </div>
