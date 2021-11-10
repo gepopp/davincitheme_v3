@@ -132,3 +132,13 @@ iframe, .vue-map-container {
 .vue-slider-rail {
   background: #162850;
 }
+.footer-widget{
+  @apply text-center;
+
+}
+@screen md{
+  .footer-widget{
+    @apply text-left;
+
+  }
+}
