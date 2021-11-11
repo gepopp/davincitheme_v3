@@ -62,5 +62,9 @@
 			<?php get_template_part( 'canvases', 'grundriss' ); ?>
 		<?php endif; ?>
 
+		<?php if ( ! empty( get_field( 'field_5f22e291ee8a7' ) ) ): ?>
+			<?php get_template_part( 'canvases', 'map' ); ?>
+		<?php endif; ?>
+
     </project-canvas>
 </div>

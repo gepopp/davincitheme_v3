@@ -47,7 +47,8 @@ $gallery = [];
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10">
             <div class="lg:my-12 my-10">
                 <h3 class="text-base font-bold mb-0 leading-none text-white">
-					<?php the_field( 'field_5f216411f6f5a' ) ?></h3>
+					<?php the_field( 'field_5f216411f6f5a' ) ?>
+                </h3>
                 <h1 class="text-3xl text-golden leading-none mb-8 break-words"><?php the_title() ?></h1>
                 <div class="text-white text-sm"><?php the_field( 'oii_ft_ObjektText', null, false ) ?></p>
                 </div>
