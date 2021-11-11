@@ -37,6 +37,15 @@ class Widgets {
 			'before_title'  => '<h2 class="text-golden footer-widget-title">',
 			'after_title'   => '</h2>',
 		) );
+
+		register_sidebar( array(
+			'name'          => 'Artikel Sidebar',
+			'id'            => 'article_sidebar',
+			'before_widget' => '<div class="article-sidebar">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="text-golden sidebar-widget-title">',
+			'after_title'   => '</h2>',
+		) );
 	}
 
 

@@ -17,6 +17,10 @@
       text-decoration: underline;
     }
   }
+}
 
-
+.article-sidebar{
+  h2{
+    @apply text-golden font-serif text-2xl;
+  }
 }

@@ -12,6 +12,7 @@ $darkblue: #162850;
 @import "content";
 @import "pannellum.css";
 
+
 body {
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
@@ -140,5 +141,31 @@ iframe, .vue-map-container {
   .footer-widget{
     @apply text-left;
 
+  }
+}
+
+
+.article-sidebar{
+  h2{
+    @apply text-golden font-serif text-2xl mb-5;
+  }
+
+
+  .wp-block-buttons{
+    @apply my-5 flex flex-col gap-x-0;
+
+    .wp-block-button{
+       @apply flex flex-col;
+
+      a.wp-block-button__link{
+        @apply block w-full text-center rounded-none bg-golden w-full shadow-lg;
+      }
+    }
+  }
+
+  .wp-block-categories-list{
+    a{
+      @apply underline;
+    }
   }
 }

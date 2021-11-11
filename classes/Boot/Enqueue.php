@@ -54,6 +54,10 @@ class Enqueue {
 			wp_enqueue_script('davinci_project_js', get_stylesheet_directory_uri() . "/dist/project{$ext}.js", [], null, true);
 			wp_enqueue_style( 'davinci_project_style', get_stylesheet_directory_uri() . '/dist/project.css' );
 		}
+
+		if(is_single()){
+			wp_enqueue_script('davinci_contact_js', get_stylesheet_directory_uri() . "/dist/contactform{$ext}.js", [], null, true);
+		}
 	}
 
 
