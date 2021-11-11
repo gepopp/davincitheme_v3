@@ -89,30 +89,33 @@ iframe, .vue-map-container {
     min-height: 480px;
   }
 }
+
 .current-menu-item {
   @apply font-semibold underline pb-2;
 }
 
 
-.tops-table{
-  tr{
-    &hover{
+.tops-table {
+  tr {
+    &hover {
       @apply bg-gray-300;
     }
   }
-  td{
+
+  td {
     @apply text-center border border-golden cursor-pointer;
   }
 }
 
-.footer-widget{
+.footer-widget {
   @apply text-golden !important;
 }
 
-.carousel__control, .carousel__indicator::before{
+.carousel__control, .carousel__indicator::before {
   background-color: #CFA075 !important;
 }
-.carousel__indicator::before{
+
+.carousel__indicator::before {
   height: 5px !important;
 }
 
@@ -125,7 +128,7 @@ iframe, .vue-map-container {
 .vue-slider-dot-handle {
   width: 25px;
   height: 25px;
-  background-color:  #CFA075;
+  background-color: #CFA075;
   border-radius: 50%;
   @apply shadow-xl;
 }
@@ -133,39 +136,90 @@ iframe, .vue-map-container {
 .vue-slider-rail {
   background: #162850;
 }
-.footer-widget{
+
+.footer-widget {
   @apply text-center;
 
 }
-@screen md{
-  .footer-widget{
+
+@screen md {
+  .footer-widget {
     @apply text-left;
 
   }
 }
 
 
-.article-sidebar{
-  h2{
+.article-sidebar {
+  h2 {
     @apply text-golden font-serif text-2xl mb-5;
   }
 
 
-  .wp-block-buttons{
+  .wp-block-buttons {
     @apply my-5 flex flex-col gap-x-0;
 
-    .wp-block-button{
-       @apply flex flex-col;
+    .wp-block-button {
+      @apply flex flex-col;
 
-      a.wp-block-button__link{
+      a.wp-block-button__link {
         @apply block w-full text-center rounded-none bg-golden w-full shadow-lg;
       }
     }
   }
 
-  .wp-block-categories-list{
-    a{
+  .wp-block-categories-list {
+    a {
       @apply underline;
     }
   }
+}
+
+.article-content {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-semibold text-xl mb-5;
+  }
+
+  h1, h2 {
+    @apply text-3xl;
+  }
+
+  h3, h4 {
+    @apply text-2xl;
+  }
+
+  p {
+    @apply mb-3;
+  }
+  blockquote.wp-block-quote {
+    @apply p-5 bg-gray-100 text-lightblue italic;
+  }
+  ul, ol{
+    @apply ml-5 my-5;
+    li{
+      @apply list-disc ml-5;
+    }
+  }
+
+  ol{
+    li{
+      @apply list-decimal;
+    }
+  }
+
+  .wp-block-image{
+    @apply w-full;
+    img{
+      @apply w-full h-auto p-5 border border-golden;
+    }
+  }
+
+  hr{
+    @apply mb-5;
+  }
+
+  img{
+    @apply w-full h-auto p-5 border border-golden;
+  }
+
 }

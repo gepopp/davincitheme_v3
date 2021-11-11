@@ -96,8 +96,8 @@ get_template_part( 'headers', 'team', [ 'tags' => $terms ] );
                                         </div>
 									<?php
 									endwhile;
-								endif;
-								?>
+                                    endif;
+                                    ?>
                             </div>
                         </div>
                     </div>

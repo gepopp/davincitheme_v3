@@ -3,7 +3,7 @@ get_header();
 
 get_template_part( 'headers', 'banderole' );
 the_post();
-
+$id = get_the_id();
 $categories = get_the_category();
 ?>
 
@@ -40,12 +40,13 @@ get_template_part( 'headers', 'close' );
 ?>
 	<div class="container mx-auto p-5">
 		<div class="grid grid-cols-4 gap-5">
-			<div class="hidden md:block px-5 border-r border-golden" id="app">
+            <div class="col-span-4 md:col-span-3 article-content">
+				<?php the_content();?>
+            </div>
+			<div class="hidden md:block px-5 border-r border-golden order-first " id="app">
 				<?php dynamic_sidebar('article_sidebar'); ?>
 			</div>
-			<div class="col-span-4 md:col-span-3">
-				<?php the_content();?>
-			</div>
+
 		</div>
 	</div>
 <?php
