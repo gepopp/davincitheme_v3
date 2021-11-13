@@ -48,7 +48,6 @@ class Boot {
 
 		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support('post-thumbnails');
-		add_theme_support('responsive-embeds');
 		add_theme_support('wp-block-styles');
 
 		// Switch default core markup for search form, comment form, and comments to output valid HTML5.
