@@ -41,6 +41,12 @@ class ACFFilter {
 			));
 
 			acf_add_options_sub_page(array(
+				'page_title' 	=> __('Immobilien Archiv', 'davincigroup'),
+				'menu_title'	=> __('Immobilien    Archiv', 'davincigroup'),
+				'parent_slug'	=> 'theme-general-settings',
+			));
+
+			acf_add_options_sub_page(array(
 				'page_title' 	=> __('404 Seite', 'davincigroup'),
 				'menu_title'	=> __('404 Seite', 'davincigroup'),
 				'parent_slug'	=> 'theme-general-settings',

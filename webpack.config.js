@@ -14,7 +14,9 @@ const config = {
     entry: {
         main: './assets/js/main.js',
         project: './assets/js/project.js',
-        contactform : './assets/js/contactform.js'
+        contactform : './assets/js/contactform.js',
+        frontpage : './assets/js/frontpage.js',
+        archiveimmobilie : './assets/js/archiveimmobilie.js'
     },
     output: {
         filename: `[name]${prefix}.js`,

@@ -58,6 +58,13 @@ class Enqueue {
 		if(is_singular('post')){
 			wp_enqueue_script('davinci_contact_js', get_stylesheet_directory_uri() . "/dist/contactform{$ext}.js", [], null, true);
 		}
+
+		if(is_front_page() || is_home()){
+			wp_enqueue_script('davinci_frontpage_js', get_stylesheet_directory_uri() . "/dist/frontpage{$ext}.js", [], null, true);
+		}
+		if(is_archive('immobilie')){
+			wp_enqueue_script('davinci_archiveimmobilie_js', get_stylesheet_directory_uri() . "/dist/archiveimmobilie{$ext}.js", [], null, true);
+		}
 	}
 
 

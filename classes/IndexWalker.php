@@ -202,7 +202,11 @@ class IndexWalker
         if ($this->filled_cols + $this->postColumns[$current_id] > (float) 4) {
 
             if ($this->is_first_row) {
-                $this->closeDiv(3);
+                $this->closeDiv(2);
+                if(is_front_page() || is_home()){
+	                get_template_part('headers', 'countbar');
+                }
+	            $this->closeDiv(1);
 	            get_template_part('helper','open-body');
                 $this->is_first_row = false;
             }
