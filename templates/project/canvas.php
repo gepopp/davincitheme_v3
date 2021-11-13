@@ -66,5 +66,6 @@
 			<?php get_template_part( 'canvases', 'map' ); ?>
 		<?php endif; ?>
 
+
     </project-canvas>
 </div>
