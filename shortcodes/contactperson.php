@@ -27,11 +27,10 @@ add_shortcode( 'teammember', function ( $atts ) {
 				] ); ?>
 				<?php the_post_thumbnail( 'custom-thumbnail', [ 'class' => 'lg:hidden' ] ); ?>
                 <div class="<?php echo $bg ?> w-full flex flex-col flex-grow p-5 relative">
-                        <h2 class="text-golden text-xl leading-normal mb-0">
-                            <?php the_field('field_5f23fa71c024c') ?>&nbsp;
-                            <?php the_field('field_5f23fa76c024d') ?>
-                        </h2>
-                        <h3 class="text-white text-lg font-medium">
+                        <h3 class="text-golden text-xl leading-normal mb-0">
+                            <?php the_field('field_5f23fa71c024c') ?>&nbsp;<?php the_field('field_5f23fa76c024d') ?>
+                        </h3>
+                        <h3 class="text-white text-lg font-medium mt-0">
                             <?php echo get_field( 'field_5f25dace611bf' ) != '' ? get_field( 'field_5f25dace611bf' ) : 'Da Vinci Group' ?>
                         </h3>
 					<?php $term = wp_get_post_terms( get_the_ID(), 'project_location' );
