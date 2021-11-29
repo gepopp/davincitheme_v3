@@ -1,23 +1,31 @@
+<?php if(get_field('field_61a4f3a28f609', 'option')): ?>
+
 <div class="bg-golden" id="app">
     <div class="container mx-auto text-white">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5" style="min-height: 0 !important;">
             <div class="flex flex-col justify-center items-center p-10">
-                <countup :end-val="<?php echo wp_count_posts( 'project' )->publish ?>" :delay="1000"></countup>
-                <p class="text-lg font-semibold">Projekte online</p>
-                <a href="<?php echo home_url( 'referenzen' ) ?>" class="block bg-darkblue text-white text-center shadow-lg px-5 py-3 mt-3">Zu den Projekten</a>
-
+                <countup :end-val="<?php the_field('field_61a4f3bb8f60b', 'option'); ?>" :delay="1000"></countup>
+                <p class="text-lg font-semibold"><?php the_field('field_61a4f3e18f60c', 'option'); ?></p>
+                <a href="<?php the_field('field_61a4f3ec8f60d', 'option'); ?>" class="block bg-darkblue text-white text-center shadow-lg px-5 py-3 mt-3">
+	                <?php the_field('field_61a4f3fb8f60e', 'option'); ?>
+                </a>
             </div>
             <div class="flex flex-col justify-center items-center p-10">
-                <countup :end-val="<?php echo wp_count_posts( 'immobilie' )->publish ?>" :delay="2000"></countup>
-                <p class="text-lg font-semibold">Wohneinheiten online</p>
-                <a href="<?php echo get_post_type_archive_link( 'immobilie' ) ?>" class="block bg-darkblue text-white text-center shadow-lg px-5 py-3 mt-3">Zu den Immobilien</a>
+                <countup :end-val="<?php the_field('field_61a4f4158f610', 'option'); ?>" :delay="2000"></countup>
+                <p class="text-lg font-semibold"><?php the_field('field_61a4f4348f611', 'option'); ?></p>
+                <a href="<?php the_field('field_61a4f43f8f612', 'option'); ?>" class="block bg-darkblue text-white text-center shadow-lg px-5 py-3 mt-3">
+	                <?php the_field('field_61a4f44a8f613', 'option'); ?>
+                </a>
             </div>
             <div class="flex flex-col justify-center items-center p-10">
-                <countup :end-val="<?php echo wp_count_posts( 'team_member' )->publish ?>" :delay="3000"></countup>
-                <p class="text-lg font-semibold">Teammitglieder</p>
-                <a href="<?php echo get_post_type_archive_link( 'team_member' ) ?>" class="block bg-darkblue text-white text-center shadow-lg px-5 py-3 mt-3">Zum Team</a>
+                <countup :end-val="<?php the_field('field_61a4f4628f615', 'option'); ?>" :delay="3000"></countup>
+                <p class="text-lg font-semibold"><?php the_field('field_61a4f4738f616', 'option'); ?></p>
+                <a href="<?php the_field('field_61a4f4818f617', 'option'); ?>" class="block bg-darkblue text-white text-center shadow-lg px-5 py-3 mt-3">
+	                <?php the_field('field_61a4f48c8f618', 'option'); ?>
+                </a>
             </div>
 
         </div>
     </div>
 </div>
+<?php endif;

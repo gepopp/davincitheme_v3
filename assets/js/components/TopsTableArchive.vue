@@ -53,7 +53,7 @@
             <span v-text="top.ffl+ ' m²'"></span>
             <span class="text-xs text-turquise" v-text="square(top.garten)"></span>
           </div>
-          <div class="text-center bg-darkblue text-white p-2 flex justify-center items-center" v-if="top.sold">verkauft</div>
+          <div class="text-center bg-red-900 text-white p-2 flex justify-center items-center" v-if="top.sold">verkauft</div>
           <div class="text-center bg-golden text-white p-2  flex justify-center items-center" v-if="!top.sold && !top.status">reserviert</div>
           <div class="text-center cursor-pointer p-2" v-text="euro(top.miete)" v-if="maxRent != 0 && ( !top.sold && top.status )"></div>
           <div class="text-center  cursor-pointer p-2" v-text="euro(top.verkaufspreis)" v-if="( maxPrice != 0 ) && ( !top.sold && top.status )"></div>

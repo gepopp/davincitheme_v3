@@ -143,7 +143,7 @@
               </div>
             </div>
           </div>
-          <div class="uppercase text-xs font-semibold p-2 my-3 flex items-center justify-center">GRundriss</div>
+          <div class="uppercase text-xs font-semibold p-2 my-3 flex items-center justify-center">Grundriss</div>
         </div>
 
 
@@ -166,7 +166,7 @@
             <div class="text-center cursor-pointer p-2" @click="openPermalink(top)" v-text="euro(top.miete)" v-if="minRent != 0 && maxRent != 0"></div>
 
 
-            <div class="text-center bg-darkblue text-white p-2 col-span-2 flex justify-center items-center" v-if="top.sold">verkauft</div>
+            <div class="text-center bg-red-900 text-white p-2 col-span-2 flex justify-center items-center" v-if="top.sold">verkauft</div>
             <div class="text-center bg-golden text-white p-2 col-span-2 flex justify-center items-center" v-if="!top.sold && !top.status">reserviert</div>
 
             <div class="text-center  cursor-pointer p-2" @click="openPermalink(top)" v-text="euro(top.verkaufspreis)" v-if="( minPrice != 0 && maxPrice != 0 ) && ( !top.sold && top.status )"></div>
