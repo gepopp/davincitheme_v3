@@ -74,18 +74,18 @@ $slugs = array_column( $terms, 'slug' );
                                  x-transition
                             >
                                 <h3 class="text-xl text-darkblue font-semibold">
-                                    <?php _e( 'Abteilungen', 'davincigroup' ) ?>
+									<?php _e( 'Abteilungen', 'davincigroup' ) ?>
                                 </h3>
-                                    <ul class="text-darkblue">
-										<?php foreach ( $terms as $tag ): ?>
-                                            <li>
-                                                <a href="#<?php echo $tag->slug ?>" :class="{ 'font-semibold underline' : active == '<?php echo $tag->slug ?>' }">
-                                                    <span class="text-3xl leading-none pr-5">&rsaquo;</span>
-                                                    <span class="hover:underline"><?php echo $tag->name ?></span>
-                                                </a>
-                                            </li>
-										<?php endforeach; ?>
-                                    </ul>
+                                <ul class="text-darkblue">
+									<?php foreach ( $terms as $tag ): ?>
+                                        <li>
+                                            <a href="#<?php echo $tag->slug ?>" :class="{ 'font-semibold underline' : active == '<?php echo $tag->slug ?>' }">
+                                                <span class="text-3xl leading-none pr-5">&rsaquo;</span>
+                                                <span class="hover:underline"><?php echo $tag->name ?></span>
+                                            </a>
+                                        </li>
+									<?php endforeach; ?>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -119,13 +119,16 @@ $slugs = array_column( $terms, 'slug' );
 										$team_members->the_post(); ?>
 
                                         <div class="flex flex-col col-span-2 md:col-span-1">
-											<?php the_post_thumbnail( 'custom-thumbnail' ); ?>
-
-                                            <div class="border-b border-darkblue mt-5 flex flex-col flex-1">
-
-                                                <span class="block font-medium"><?php the_field( 'field_5f25dace611bf' ) ?></span>
-                                                <span class="block text-golden text-4xl m-0"><?php the_title() ?></span>
-
+                                            <a href="<?php the_permalink(); ?>">
+												<?php the_post_thumbnail( 'custom-thumbnail' ); ?>
+                                            </a>
+                                            <div class="border-b border-darkblue mt-5 flex flex-col flex-1  mb-10">
+                                                <a href="<?php the_permalink(); ?>">
+                                                    <span class="block font-medium"><?php the_field( 'field_5f25dace611bf' ) ?></span>
+                                                </a>
+                                                <a href="<?php the_permalink(); ?>">
+                                                    <span class="block text-golden text-4xl m-0"><?php the_title() ?></span>
+                                                </a>
                                                 <p>
 													<?php the_content(); ?>
                                                 </p>
