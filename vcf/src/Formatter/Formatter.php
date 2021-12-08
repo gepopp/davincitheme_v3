@@ -10,7 +10,7 @@ use JeroenDesloovere\VCard\VCard;
 final class Formatter
 {
     /** @var string */
-    private $charset = 'utf-8';
+    private $charset = 'ISO-8859-1';
 
     /** @var string */
     private $fileName;

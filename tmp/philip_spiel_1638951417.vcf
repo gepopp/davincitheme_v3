@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:4.0
+KIND:individual
+N:Philip Spiel;;;;
+EMAIL;TYPE=work:office@davincigroup.eu
+TEL;TYPE=work;VALUE=texttel:+43-1-962-10
+TITLE:Da Vinci Group - Geschäftsleitung
+LOGO:https://d2oybdwiivuhzw.cloudfront.net/wp-content/uploads/2020/09/022
+ 05443/Logo-Quadrat.jpg
+ADR;TYPE=home:;;Schönbrunner Schlossstrasse 37A;Wien;Wien;1120;
+URL;TYPE=work:https://davincigroup.eu
+END:VCARD

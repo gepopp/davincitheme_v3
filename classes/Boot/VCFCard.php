@@ -2,6 +2,7 @@
 
 namespace davinci\codebase\Boot;
 
+
 use JeroenDesloovere\VCard\VCard;
 use JeroenDesloovere\VCard\Property\URL;
 use JeroenDesloovere\VCard\Property\Name;
@@ -13,6 +14,7 @@ use JeroenDesloovere\VCard\Property\Telephone;
 use JeroenDesloovere\VCard\Formatter\Formatter;
 use JeroenDesloovere\VCard\Formatter\VcfFormatter;
 use JeroenDesloovere\VCard\Property\Parameter\Type;
+use JeroenDesloovere\VCard\Property\Parameter\Value;
 
 class VCFCard {
 
@@ -25,6 +27,7 @@ class VCFCard {
 
 
 	function createCard( $post_id ) {
+
 
 		if ( get_post_type( $post_id ) != "team_member" ) {
 			return;
@@ -39,14 +42,23 @@ class VCFCard {
 		$logo      = get_field( 'field_5f4fe9591f733', 'option' );
 
 
+		$fullname = mb_convert_encoding( $firstname . ' ' . $lastname, "ISO-8859-1", 'UTF-8' );
+		$email    = mb_convert_encoding( $email, "ISO-8859-1", 'UTF-8' );
+		$phone    = mb_convert_encoding( $phone, "ISO-8859-1", 'UTF-8' );
+		$title    = mb_convert_encoding( 'Da Vinci Group - ' . $postition, "ISO-8859-1", 'UTF-8' );
+		$address  = mb_convert_encoding( 'Schönbrunner Schlossstrasse 37A', "ISO-8859-1", 'UTF-8' );
+
+
+		$filename = strtolower( $firstname . '_' . $lastname . '_' . time() );
+
 		// create vcf
 		$card = ( new VCard() )
-			->add( new Name( mb_convert_encoding( $firstname, "Windows-1252", "UTF-8" ), $lastname ) )
+			->add( new Name( $fullname ) )
 			->add( new Email( $email, Type::work() ) )
-			->add( new Telephone( $phone, Type::work() ) )
-			->add( new Title( 'Da Vinci Group - ' . mb_convert_encoding( $postition, "Windows-1252", "UTF-8" ) ) )
+			->add( new Telephone( $phone, Type::work(), new Value( 'text' ) ) )
+			->add( new Title( $title ) )
 			->add( new Logo( $logo ) )
-			->add( new Address( null, null, 'Schoenbrunner Schlossstrasse 37A', 'Wien', 'Wien', '1120' ) )
+			->add( new Address( null, null, $address, 'Wien', 'Wien', '1120' ) )
 			->add( new URL( 'https://davincigroup.eu', Type::work() ) );
 
 
@@ -60,7 +72,7 @@ class VCFCard {
 			}
 		}
 
-		$formatter = new Formatter( new VcfFormatter(), strtolower( $lastname ) );
+		$formatter = new Formatter( new VcfFormatter(), $filename );
 		$formatter->addVCard( $card );
 
 		$file = $formatter->save( get_stylesheet_directory() . '/tmp' );
@@ -68,7 +80,7 @@ class VCFCard {
 		//save to meida lib
 		if ( $file ) {
 
-			$vcf_location = get_stylesheet_directory() . '/tmp/' . strtolower( $lastname . '.vcf' );
+			$vcf_location = get_stylesheet_directory() . '/tmp/' . $filename . '.vcf';
 
 			$upload_dir = wp_upload_dir();
 

@@ -50,7 +50,7 @@ class Enqueue {
 			]
 		);
 
-		if(is_singular('project') || is_singular('immobilie')){
+		if(is_singular('project') || is_singular('immobilie') || is_singular('team_member')){
 			wp_enqueue_script('davinci_project_js', get_stylesheet_directory_uri() . "/dist/project{$ext}.js", [], null, true);
 			wp_enqueue_style( 'davinci_project_style', get_stylesheet_directory_uri() . '/dist/project.css' );
 		}

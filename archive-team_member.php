@@ -22,8 +22,36 @@ if ( $terms ) {
 
 get_template_part( 'headers', 'banderole' );
 get_template_part( 'headers', 'team', [ 'tags' => $terms ] );
+$slugs = array_column( $terms, 'slug' );
 
 ?>
+    <script>
+        function scrollspy() {
+            const element = document.getElementById('scrollnav');
+            return element.getBoundingClientRect().top;
+        }
+
+        function isInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        var slugs = <?php echo json_encode( $slugs ) ?>;
+
+        function sluginviewport() {
+            return slugs.find(sl => {
+                if (isInViewport(document.getElementById(sl))) {
+                    return sl;
+                }
+            })
+        }
+
+    </script>
     <section class="container mx-auto px-3 xl:px-0" style="
             background-image: url( <?php the_field( 'field_5f213eff8495d', 'option' ) ?>);
             background-size: 100% auto;
@@ -32,35 +60,58 @@ get_template_part( 'headers', 'team', [ 'tags' => $terms ] );
             padding-bottom: <?php the_field( 'field_5f2141a728d7c', 'option' ) ?>px">
         <div class="wrapper">
             <div class="content">
-				<?php foreach ( $terms as $term ):
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 pt-10" id="<?php echo $term->slug ?>">
 
-					$team_members = new WP_Query( [
-						'post_type'      => 'team_member',
-						'posts_per_page' => - 1,
-						'post_status'    => 'publish',
-						'tax_query'      => [
-							'relation' => 'AND',
-							[
-								'taxonomy' => 'team_member_tag',
-								'field'    => 'slug',
-								'terms'    => $term->slug,
-
-							],
-						],
-					] );
-
-					?>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 pt-10" id="<?php echo $term->slug ?>">
-                        <div class="col-span-1 mb-10">
-							<?php get_template_part( 'helper', 'headings',
-								[
-									'title'    => $term->name,
-									'subtitle' => get_field( 'field_5f25d3a3727b8', $term ),
-								] ); ?>
+                    <div class="col-span-1 mb-10">
+                        <div class="relative pt-10"
+                             id="powered"
+                             x-data="{ scrolled : 0, active : '' }"
+                             @scroll.window.debounce="scrolled = document.getElementById('powered').offsetTop - window.pageYOffset"
+                             @scroll.window="active = sluginviewport()">
+                            <div id="scrollnav"
+                                 class="absolute left-0 transition-all hidden lg:block"
+                                 :style="`top: ${ scrolled < 0 ? (scrolled * -1) + 100 : 0 }px;`"
+                                 x-transition
+                            >
+                                <h3 class="text-xl text-darkblue font-semibold">
+                                    <?php _e( 'Abteilungen', 'davincigroup' ) ?>
+                                </h3>
+                                    <ul class="text-darkblue">
+										<?php foreach ( $terms as $tag ): ?>
+                                            <li>
+                                                <a href="#<?php echo $tag->slug ?>" :class="{ 'font-semibold underline' : active == '<?php echo $tag->slug ?>' }">
+                                                    <span class="text-3xl leading-none pr-5">&rsaquo;</span>
+                                                    <span class="hover:underline"><?php echo $tag->name ?></span>
+                                                </a>
+                                            </li>
+										<?php endforeach; ?>
+                                    </ul>
+                            </div>
                         </div>
+                    </div>
+                    <div class="col-span-2">
 
-                        <div class="col-span-2">
-                            <div class="grid grid-cols-2 gap-4">
+						<?php foreach ( $terms as $term ):
+
+							$team_members = new WP_Query( [
+								'post_type'      => 'team_member',
+								'posts_per_page' => - 1,
+								'post_status'    => 'publish',
+								'tax_query'      => [
+									'relation' => 'AND',
+									[
+										'taxonomy' => 'team_member_tag',
+										'field'    => 'slug',
+										'terms'    => $term->slug,
+
+									],
+								],
+							] );
+
+							?>
+
+
+                            <div class="grid grid-cols-2 gap-4" id="<?php echo $term->slug ?>">
 
 								<?php
 								if ( $team_members->have_posts() ):
@@ -96,14 +147,13 @@ get_template_part( 'headers', 'team', [ 'tags' => $terms ] );
                                         </div>
 									<?php
 									endwhile;
-                                    endif;
-                                    ?>
+								endif;
+								?>
                             </div>
-                        </div>
+						<?php endforeach; ?>
                     </div>
-				<?php endforeach; ?>
+                </div>
             </div>
         </div>
     </section>
 <?php get_footer();
-
