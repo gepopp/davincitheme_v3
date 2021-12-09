@@ -41,12 +41,12 @@ class VCFCard {
 		$phone     = get_field( 'field_5f23fa86c024f', $post_id );
 		$logo      = get_field( 'field_5f4fe9591f733', 'option' );
 
+		$search = ['ö', 'ä', 'ü', 'ß', 'Ö', 'Ä', 'Ü'];
+		$replace = ['oe', 'ae', 'ue', 'ss', 'Oe', 'Ae', 'Ue'];
 
-		$fullname = mb_convert_encoding( $firstname . ' ' . $lastname, "ISO-8859-1", 'UTF-8' );
-		$email    = mb_convert_encoding( $email, "ISO-8859-1", 'UTF-8' );
-		$phone    = mb_convert_encoding( $phone, "ISO-8859-1", 'UTF-8' );
-		$title    = mb_convert_encoding( 'Da Vinci Group - ' . $postition, "ISO-8859-1", 'UTF-8' );
-		$address  = mb_convert_encoding( 'Schönbrunner Schlossstrasse 37A', "ISO-8859-1", 'UTF-8' );
+		$fullname = utf8_encode(str_replace($search, $replace, $firstname . ' ' . $lastname));
+		$title = utf8_encode(str_replace($search, $replace, 'Da Vinci Group - ' . $postition));
+
 
 
 		$filename = strtolower( $firstname . '_' . $lastname . '_' . time() );
@@ -56,9 +56,10 @@ class VCFCard {
 			->add( new Name( $fullname ) )
 			->add( new Email( $email, Type::work() ) )
 			->add( new Telephone( $phone, Type::work(), new Value( 'text' ) ) )
+			->add( new Telephone( $phone, Type::home(), new Value( 'text' ) ) )
 			->add( new Title( $title ) )
 			->add( new Logo( $logo ) )
-			->add( new Address( null, null, $address, 'Wien', 'Wien', '1120' ) )
+			->add( new Address( null, null, utf8_encode('Schoenbrunner Schlossstrasse 37A'), 'Wien', 'Wien', '1120' ) )
 			->add( new URL( 'https://davincigroup.eu', Type::work() ) );
 
 

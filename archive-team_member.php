@@ -130,7 +130,7 @@ $slugs = array_column( $terms, 'slug' );
                                                     <span class="block text-golden text-4xl m-0"><?php the_title() ?></span>
                                                 </a>
                                                 <p>
-													<?php the_content(); ?>
+													<?php the_excerpt(); ?>
                                                 </p>
 
                                                 <div>
