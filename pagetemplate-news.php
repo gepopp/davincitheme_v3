@@ -26,8 +26,7 @@ if ( $sticky->have_posts() ):
                 <div class="mb-10">
                     <p class="text-base font-bold mb-0 leading-none text-white">
 						<?php echo get_the_time( 'd.m.Y' ) ?>
-                        |
-						<?php echo get_the_author() ?>
+
 
 						<?php foreach ( $categories as $category ): ?>
                             |
