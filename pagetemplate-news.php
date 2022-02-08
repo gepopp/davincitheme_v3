@@ -35,7 +35,7 @@ if ( $sticky->have_posts() ):
                                 </span>
 						<?php endforeach; ?>
                     </p>
-                    <h1 class="text-5xl text-golden leading-normal"><?php the_title() ?></h1>
+                    <h1 class="text-5xl text-golden leading-none"><?php the_title() ?></h1>
                     <div class="text-white line-clamp-4">
 						<?php the_excerpt(); ?>
                     </div>
