@@ -1,32 +1,29 @@
 module.exports = {
-    purge: {
-        content : [
-            './**/*.php',
-            './assets/**/*.vue',
-            './assets/**/*.js',
-            './*.php',
-        ],
-        safelist : [
-            'md:flex-row',
-            'space-x-10',
-            'md:space-x-2',
-            'grid-cols-5',
-            'col-span-4',
-            'grid-cols-8',
-            'gap-3',
-            'border-r',
-            'border-b',
-            'border-golden',
-            'hover:bg-gray-100',
-            'bg-clip-content',
-            'col-span-2',
-            'font-semibold',
-            'md:block',
-            'col-span-5',
-            'md:col-span-4'
-        ]
-    },
-    darkMode: false, // or 'media' or 'class'
+    content: [
+        './**/*.php',
+        './assets/**/*.vue',
+        './assets/**/*.js',
+        './*.php',
+    ],
+    safelist: [
+        'md:flex-row',
+        'space-x-10',
+        'md:space-x-2',
+        'grid-cols-5',
+        'col-span-4',
+        'grid-cols-8',
+        'gap-3',
+        'border-r',
+        'border-b',
+        'border-golden',
+        'hover:bg-gray-100',
+        'bg-clip-content',
+        'col-span-2',
+        'font-semibold',
+        'md:block',
+        'col-span-5',
+        'md:col-span-4'
+    ],
     theme: {
         container: {
             center: true,
@@ -53,13 +50,10 @@ module.exports = {
             height: {
                 'halfscreen': '50vh'
             },
-            minHeight : {
-                halfscreen : '50vh'
+            minHeight: {
+                halfscreen: '50vh'
             }
         },
-    },
-    variants: {
-        extend: {}
     },
     plugins: [
         require('@tailwindcss/line-clamp'),

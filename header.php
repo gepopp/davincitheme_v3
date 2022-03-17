@@ -30,6 +30,6 @@ extract($args);
 	</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
-<body <?php body_class(); ?> >
+<body <?php body_class('dark:bg-darkblue'); ?> >
 <main class="bg-repeat-x w-full min-h-screen">
 <?php get_template_part('headers', 'stickymenu', ['is_sticky' => $is_sticky]) ?>

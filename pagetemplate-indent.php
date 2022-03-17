@@ -33,7 +33,7 @@ get_template_part('headers', 'close');
 
 
 if ( have_posts() ) : ?>
-    <div class="container mx-auto bg-white bg-opacity-50">
+    <div class="container mx-auto bg-white dark:bg-darkblue bg-opacity-50">
 		<?php while ( have_posts() ) :
 			the_post();
 

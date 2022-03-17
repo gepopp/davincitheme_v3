@@ -192,7 +192,7 @@ iframe, .vue-map-container {
     @apply mb-3;
   }
   blockquote.wp-block-quote {
-    @apply p-5 bg-gray-100 text-lightblue italic;
+    @apply p-5 bg-gray-100 text-lightblue italic dark:bg-turquise dark:text-white dark:border-darkblue;
   }
   ul, ol{
     @apply ml-5 my-5;
@@ -225,5 +225,11 @@ iframe, .vue-map-container {
   .wp-block-embed{
     @apply p-5 border border-golden;
   }
+
+}
+input, textarea{
+  @apply dark:bg-gray-100;
+}
+.container{
 
 }
