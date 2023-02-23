@@ -1,7 +1,11 @@
 <a
     href="<?php
     if(get_post_type() == 'project'):
-        echo get_the_permalink();
+        if (get_field('field_63f70dec119ca')):
+            the_field('field_63f70dec119ca');
+        else:
+            the_permalink();
+        endif;
     else:
         echo get_field('field_5f23c86fc9b98')['url'];
     endif; ?>"

@@ -13,7 +13,11 @@ extract($args);
          background-size: cover;
          background-position: center"
 >
-    <?php if(get_post_type() == 'project'): ?><a href="<?php the_permalink(); ?>" class="w-full h-full">&nbsp;</a><?php endif; ?>
+    <?php if(get_post_type() == 'project'):?><a href="<?php if (get_field('field_63f70dec119ca')):
+        the_field('field_63f70dec119ca');
+    else:
+        the_permalink();
+    endif; ?>" class="w-full h-full">&nbsp;</a><?php endif; ?>
 </div>
 <div class="col-span-4 lg:hidden <?php echo $hidden ?>">
     <?php the_post_thumbnail('custom-thumbnail') ?>

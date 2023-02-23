@@ -22,20 +22,26 @@ extract($args);
 
             <div class="h-full flex flex-col justify-end p-5 <?php echo $bg ?>" style="min-height: 258px">
 
-                <?php if ( get_field( 'field_60bc7d0a1e837' ) ): ?>
+                <?php if (get_field('field_60bc7d0a1e837')): ?>
                     <p class="bg-golden text-white uppercase px-3 flex justify-center w-full">
                         <span><?php echo get_field('field_60bc94a0bef6f') ?></span>
                     </p>
                 <?php endif; ?>
 
 
-                <a href="<?php the_permalink(); ?>" class="mb-3">
+                <a href="<?php if (get_field('field_63f70dec119ca')):
+                    the_field('field_63f70dec119ca');
+                else:
+                    the_permalink();
+                endif; ?>" class="mb-3">
                     <h2 class="text-golden text-3xl leading-normal"><?php the_title() ?></h2>
                     <h3 class="text-white text-lg font-medium -mb-6"><?php echo get_field('field_5f216411f6f5a') != '' ? get_field('field_5f216411f6f5a') : 'Da Vinci Group' ?></h3>
                 </a>
 
-                <?php $term = wp_get_post_terms(get_the_ID(), 'project_location'); if($term): $divider_tag = $term[0]->name; else: $divider_tag = null; endif; ?>
-                <?php get_template_part('helper', 'divider', ['bg' => $bg, 'divider_tag' => $divider_tag ]); ?>
+                <?php $term = wp_get_post_terms(get_the_ID(), 'project_location');
+                if ($term): $divider_tag = $term[0]->name;
+                else: $divider_tag = null; endif; ?>
+                <?php get_template_part('helper', 'divider', [ 'bg' => $bg, 'divider_tag' => $divider_tag ]); ?>
 
                 <p class="text-white truncate">
                     <?php echo get_the_excerpt(); ?>
@@ -54,18 +60,24 @@ extract($args);
             </div>
             <div class="col-span-4 lg:col-span-1 h-full flex flex-col justify-end <?php echo $bg ?> p-5">
 
-                <?php if ( get_field( 'field_60bc7d0a1e837' ) ): ?>
+                <?php if (get_field('field_60bc7d0a1e837')): ?>
                     <p class="bg-golden text-white uppercase px-3 flex justify-center w-full">
                         <span><?php echo get_field('field_60bc94a0bef6f') ?></span>
                     </p>
                 <?php endif; ?>
 
-                <a href="<?php the_permalink(); ?>" class="mb-3">
+                <a href="<?php if (get_field('field_63f70dec119ca')):
+                    the_field('field_63f70dec119ca');
+                else:
+                    the_permalink();
+                endif; ?>" class="mb-3">
                     <h2 class="text-golden text-3xl leading-normal"><?php the_title() ?></h2>
                     <h3 class="text-white text-lg font-medium"><?php echo get_field('field_5f216411f6f5a') != '' ? get_field('field_5f216411f6f5a') : 'Da Vinci Group' ?></h3>
                 </a>
-                <?php $term = wp_get_post_terms(get_the_ID(), 'project_location'); if($term): $divider_tag = $term[0]->name; else: $divider_tag = null; endif; ?>
-                <?php get_template_part('helper', 'divider', ['bg' => $bg, 'divider_tag' => $divider_tag ]); ?>
+                <?php $term = wp_get_post_terms(get_the_ID(), 'project_location');
+                if ($term): $divider_tag = $term[0]->name;
+                else: $divider_tag = null; endif; ?>
+                <?php get_template_part('helper', 'divider', [ 'bg' => $bg, 'divider_tag' => $divider_tag ]); ?>
 
                 <div class="text-white"><?php the_excerpt(); ?></div>
                 <div class="mt-auto">
